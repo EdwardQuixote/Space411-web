@@ -1,0 +1,115 @@
+.bg-item{
+    filter:Alpha(opacity=0);
+}
+.element .TzInner:hover .bg-item{
+    filter:Alpha(opacity=75);
+
+}
+body.home #ja-mainnav .navbar .nav > li a{
+    filter:Alpha(opacity=0);
+
+}
+
+
+body.home #scrollbar1{
+    filter:Alpha(opacity=30);
+}
+body.home .ja-sidebar-1:hover .ja-module{
+    display: block !important;
+}
+body.home .ja-module{
+    display: none !important;
+}
+
+
+body.category #ja-mainbody{
+    width: 1244px !important;
+}
+body.category #scrollbar1{
+    left: 0 !important;
+    position: fixed !important;
+
+
+}
+.contact-overlay{
+    background: #000000;
+    filter:Alpha(opacity=70);
+}
+body.category  #ja-mainnav .navbar .nav > li > ul{
+    left: 260px !important;
+}
+body.page #ja-mainnav .navbar .nav > li > ul{
+    left: 260px !important;
+}
+#tz_fullslide #slidecaption1, #wrapper #slidecaption1{
+    background: #ffffff !important;
+    filter:Alpha(opacity=50) !important;
+}
+#wrapper #slidecaption h2, #tz_fullslide #slidecaption h2{
+    background: #ff5a0a !important;
+    filter:Alpha(opacity=80) !important;
+    color: #ffffff !important;
+}
+body .slider-control #prevslide, .slider-control #nextslide, .slider-control span.music_icon, .slider-control span.music, .slider-control span.close-music, .slider-control span.music, .slider-control span.slide-description, .slider-control span.slide-hidden, .slider-control span.slide-fullscreen, .slider-control span.slide-screen, #video_control ul li a{
+    background-color: #ffffff !important;
+    filter:Alpha(opacity=50) !important;
+}
+
+#thumb-tray ul#thumb-list li img:hover{
+
+    filter:Alpha(opacity=100) !important;
+}
+#ourner-sitebar #thumb-tray{
+    background: #dcd7d7 !important;
+    filter:Alpha(opacity=60) !important;
+
+}
+ul#thumb-list{
+    display: inline-block !important;
+    left: 0 !important;
+    list-style: none outside none !important;
+    padding: 0 !important;
+    position: relative !important;
+
+}
+ul#thumb-list li{
+    float: left !important;
+    background: none repeat scroll 0 0 transparent;
+    height: 152px;
+    overflow: hidden;
+    padding: 0;
+    width: 225px !important;
+
+}
+#thumb-tray ul#thumb-list li img{
+    opacity: 0.5 !important;
+    filter:Alpha(opacity=50) !important;
+    height: auto !important;
+    min-height: 152px !important;
+    width: 225px !important;
+}
+.span6 {
+    width: 602px !important;
+}
+.ja-sidebar-2{
+    width: 250px !important;
+}
+
+body #TzContent {
+    margin-left: 4px !important;
+    width: auto !important;
+    margin-right: 0 !important;
+}
+.category .row{
+    margin-left: -20px !important;
+}
+
+
+h3.tz_title{
+    line-height: 30px !important;
+}
+
+.contact{
+
+    width: 1020px !important;
+}

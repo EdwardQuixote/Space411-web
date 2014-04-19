@@ -1,0 +1,197 @@
+#comments .TzCommentTitle{
+
+    display: block;
+
+    font-size: 15px;
+    margin-top: 33px;
+    text-transform: uppercase;
+}
+#comments ol{
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+/* Comment Form */
+#reply-title {
+
+    font-size: 14px;
+    line-height: 24px;
+}
+#reply-title a{
+    color: #000;
+    font-size: 16px;
+    text-decoration: underline;
+    line-height: 24px;
+}
+
+.comment-notes {
+    color: #fd4900;
+    /*font-family: Arial;*/
+    font-size: 13px;
+}
+
+/* Form */
+ form input, .column form textarea{
+
+    padding: 10px;
+    color: #717171;
+}
+
+form input[type="submit"]{
+    background: #454545;
+    color: white;
+    cursor: pointer;
+
+    border: 0;
+
+}
+ form p {
+    font-size: 13px;
+
+}
+form p a {
+    text-decoration: underline;
+}
+
+#comments ol li {
+    list-style: none;
+}
+
+ ol.commentlist li {
+    margin: 15px 0;
+}
+
+ol.commentlist li ol.children li {
+    margin-left: 75px;
+}
+
+ol.commentlist {
+    color: #757575;
+    font-size: 14px;
+    /*font-family: opensansregular;*/
+}
+
+ ol.commentlist p{
+    margin: 0 0 15px;
+}
+
+ ol.commentlist article{
+
+}
+
+ol.commentlist header{
+    float: left;
+    margin-right: 10px;
+}
+
+ ol.commentlist header img{
+    padding: 2px;
+    border: 1px solid #dcddde;
+}
+
+ ol.commentlist section{
+    display: table;
+    border-bottom: 1px dashed #8E8E8E;
+}
+
+ol.commentlist li ol.children section {
+    border-bottom: none;
+}
+
+ol.commentlist li ol.children article {
+    border-bottom: 1px dashed #D2D2D2;
+}
+
+ ol.commentlist section a.comments-datetime{
+
+    font-size: 12px;
+}
+
+ ol.commentlist cite, .column ol.commentlist cite a{
+
+    font-size: 14px;
+    font-style: normal;
+}
+
+.comment-edit-link, .comment-reply-link {
+    color: #fd4900;
+
+    font-size: 12px;
+}
+.comment-edit-link:hover, .comment-reply-link:hover, .comments-datetime:hover {
+    text-decoration: none;
+}
+
+
+
+.widget_search .screen-reader-text {
+    display:none;
+}
+
+.custom_socialFooter img {
+    width: 20px;
+}
+
+.widget_search input {
+    padding: 4px !important;
+}
+
+.plazart-code {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #EEEEEE;
+    clear: both;
+    color: #555555;
+    font-size: 13px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 15px;
+    /*font-family: monospace;*/
+}
+
+#gallery-helper {
+    position: absolute;
+    right: 5%;
+    top: 8%;
+}
+#form-submit{
+    background: none repeat scroll 0 0 #FF722C;
+    border: medium none;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 2px 0 #AA5125;
+    color: #FFFFFF;
+    font-size: 14px;
+    height: 45px;
+    line-height: 25px;
+    width: 100px;
+    float: right;
+
+}
+#wpcf7-f383-p66-o1 .wpcf7-textarea{
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    color: #8A8C8C;
+    font-size: 13px;
+    line-height: 36px;
+    padding: 0 2%;
+    width: 96%;
+    height: 180px;
+    line-height: 20px;
+}
+#wpcf7-f383-p66-o1 .wpcf7-text
+{
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    color: #8A8C8C;
+    font-size: 13px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2%;
+    width: 96%;
+}
+/*body #ja-mainbody .ja-sidebar-1, #ja-content .TzBlogInner {*/
+    /*box-shadow: none;*/
+/*}*/
+body div.wpcf7-mail-sent-ng{
+    border: 0;
+}

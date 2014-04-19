@@ -1,0 +1,447 @@
+
+html, body{
+
+    background: #eeeeee;
+    position: relative;
+    z-index: -9999;
+}
+
+body .slider-control #prevslide,
+.slider-control #nextslide,
+.slider-control span.music_icon,
+.slider-control span.music,
+.slider-control span.close-music,
+.slider-control span.music,
+.slider-control span.slide-description,
+.slider-control span.slide-hidden,
+.slider-control span.slide-fullscreen,
+.slider-control span.slide-screen,
+#video_control ul li a
+
+{
+    height:41px;
+    width:41px;
+    background-image: url(images/control-slider.png);
+    background-color: rgba(255, 255, 255, 0.5);
+    bottom: auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+    float:left;
+    margin: 0 0 0 3px;
+    left: auto;
+    top: auto;
+    right: auto;
+    opacity: 1;
+}
+
+body #ja-mainnav .navbar .nav > li.menu-item  > ul.sub-menu > li a {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #EEEEEE;
+    margin: 0 0 0 1px;
+    padding: 21px;
+    color: #757575;
+    text-transform: uppercase;
+}
+body #ja-mainnav .navbar .nav > li.menu-item  > ul.sub-menu > li a:hover{
+    color: #FF5B0A;
+}
+body #ja-mainnav .navbar .nav li.current-menu-item > a{
+    color: #FF5B0A ;
+}
+body #ja-mainnav .navbar .nav > li.menu-item > ul.sub-menu > li.current-menu-item a{
+    color: #FF5B0A ;
+}
+body #ja-mainnav .navbar .nav > li.current-menu-parent a{
+    color: #FF5B0A ;
+}
+body .slider-control #prevslide, .slider-control #nextslide, .slider-control span.music_icon, .slider-control span.music, .slider-control span.close-music, .slider-control span.music, .slider-control span.slide-description, .slider-control span.slide-hidden, .slider-control span.slide-fullscreen, .slider-control span.slide-screen, #video_control ul li a{
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url("images/control-slider.png");
+    background-repeat: no-repeat;
+    bottom: auto;
+    cursor: pointer;
+    float: left;
+    height: 41px;
+    left: auto;
+    margin: 0 0 0 3px;
+    opacity: 1;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 41px;
+}
+
+body #video_control ul li a:hover {
+    background-color: #FFFFFF;
+}
+/* hover icon music */
+.slider-control span.music_icon:hover,
+.slider-control span.close-music:hover,
+.slider-control span.slide-hidden:hover,
+.slider-control span.slide-description:hover{
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+body
+.ja-sidebar-1 .ja-module h3.module-title span,
+.ja-sidebar-2 .ja-module h3.module-title span{
+    background: url(images/line-module.png) bottom repeat-x;
+    padding-bottom: 20px;
+}
+.textwidget{
+    color: #757575;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+
+}
+body #ja-mainnav .navbar .nav > li a{
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    color:#757575;
+    padding: 21px;
+    background: url(images/bg-line.png) top repeat-x #fff;
+    margin: 0 30px;
+
+}
+
+/*view portfolio*/
+#portfolio #tz_append a{
+    padding:0;
+    display: block;
+    width: 100%;
+    height: 212px;
+    background: url(images/add-item.png) center no-repeat;
+    box-shadow: none;
+    z-index: 10;
+    position: relative;
+}
+
+#ja-mainbody{
+    background-color: #eee;
+}
+
+
+body #ja-mainbody {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 0;
+}
+body .ja-mainbody{
+    padding:0;
+    background: #fff;
+}
+body
+#ja-mainnav .navbar .nav > li {
+    background: none repeat scroll 0 0 transparent;
+    float: none;
+    position: relative;
+    width: 266px;
+}
+body #ja-mainnav .navbar .nav > li > ul{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: none;
+    left: 261px;
+
+    padding: 0;
+    top: 0;
+
+}
+#scrollbar1{
+    background: #ffffff !important;
+}
+.tz_portfolio_like_button .TwitterButton, .tz_portfolio_like_button .FacebookButton, .tz_portfolio_like_button .GooglePlusOneButton, .tz_portfolio_like_button .TzLikeQuestion{
+    float: left;
+}
+.tz_portfolio_like_button .TzLikeButtonInner{
+    padding: 10px 0 0;
+}
+.TzItemPage .TzArticleInfo, .TzPortfolioItemPage .TzArticleInfo{
+    background: none no-repeat scroll 0 0 transparent;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 0 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    color: #A4A4A4;
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0 0 17px;
+    padding: 0 0 12px;
+}
+span.label:first-child{
+    margin-left: 0;
+}
+span.label{
+    margin-left: 5px;
+}
+body .flexslider{
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+/*.home #ja-mainbody .ja-sidebar-1, #ja-content .TzItemPageInner{*/
+    /*box-shadow: none;*/
+/*}*/
+
+body.page #ja-mainbody{
+    background: none;
+}
+/*body.page #ja-mainbody .ja-sidebar-1{*/
+    /*border-right: none;*/
+/*}*/
+body section#ja-mainbody .ja-sidebar-1 {
+
+    border-right: 1px solid #CFCFCF;
+
+}
+.category #ja-mainbody .ja-sidebar-1, #ja-content .TzBlogInner, #ja-content .TzItemPageInner{
+    box-shadow: 2px 0 0 #EEEEEE;
+
+}
+hr{
+    margin-left: 0px !important;
+}
+.single #ja-mainbody .ja-sidebar-1, #ja-content .TzBlogInner, #ja-content .TzItemPageInner{
+    box-shadow: 2px 0 0 #EEEEEE;
+
+}
+.ja-sidebar-1 .ja-module h3.module-title span,
+.ja-sidebar-2 .ja-module h3.module-title span{
+    background: url(../../images/line-module.png) bottom repeat-x;
+    padding-bottom: 20px;
+}
+
+
+.mod_tz_news ul.tz_news li a{
+    font-size: 14px;
+    color:#2a2a2a;
+}
+.mod_tz_news ul.tz_news li span.tz_date{
+    background: url(../../images/date.png) left center no-repeat;
+    padding-left: 20px;
+    font-size: 11px;
+    color: #757575;
+    display: inline;
+    text-transform: uppercase;
+}
+body .wp-pagenavi span.pages, .wp-pagenavi span.pages:hover{
+    background: none;
+    border: 1px solid #EBEBEB;
+}
+.wp-pagenavi a:hover{
+    color: #000000;
+}
+body .wp-pagenavi span.current {
+
+
+    color: #000000;
+}
+body .wp-pagenavi span, .wp-pagenavi a{
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #EBEBEB;
+}
+div.tz_news .tz_accordion h3.tz_title{
+    color:#444444;
+}
+#ja-content .TzBlog h3.TzBlogTitle a{
+    color:#2e2e2e;
+    font-size: 22px;
+}
+#ja-content .TzArticleBlogInfo,
+#ja-content .TzItemPage .TzArticleInfo{
+    border:none;
+    background: url(../../images/line.png) left bottom no-repeat;
+    padding-bottom: 20px;
+}
+/*blog detail*/
+#ja-content .TzBlog .TzBlogInner > h1,
+#ja-content .TzItemPage h1.TzHeadingTitle,
+body #ja-content .option-combo h1
+{
+    font-size: 36px !important;
+    text-transform: uppercase;
+    color:#000  !important;
+    font-weight: normal  !important;
+    background: url(../../images/bg-line.png) bottom repeat-x  !important;
+    padding:0 0 30px 0  !important;
+    margin: 0 0 30px 0  !important;
+    border:none  !important;
+    /*font-family: 'OpenSansLight' !important;*/
+}
+
+#ja-content .TzItemPage h2.TzArticleTitle {
+    color: #2E2E2E;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 12px;
+    margin-left: -3px;
+    text-transform: none;
+}
+
+body ol.commentlist section a.comments-datetime{
+    color: #757575;
+}
+body .form-submit #submit{
+    border: 0;
+}
+body div.wpcf7-validation-errors{
+    border: none;
+}
+body span.wpcf7-not-valid-tip{
+    border: 0;
+}
+body #infscr-loading {
+    background: none ;
+    border-radius: 10px 10px 10px 10px;
+    bottom: 30px;
+    color: #222222;
+    font-size: 15px;
+    font-weight: bold;
+    left: 42%;
+    padding: 8px 3px;
+    position: fixed;
+    text-align: center;
+    z-index: 100;
+}
+body.page .TzBlog, .TzItemPage{
+    background: #FFFFFF;
+}
+/* author*/
+.author #ja-content .TzBlog a.TzReadmore{
+    background: none no-repeat scroll 0 0 #A0AFE8;
+    color: #FFFFFF;
+    float: right;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px 12px;
+    right: 0;
+}
+.author .Tz-author{
+    padding-bottom: 30px !important;
+}
+
+.tz_portfolio_user {
+    border-bottom: 1px solid #F0F0F0;
+
+    margin-bottom: 27px;
+    padding: 5px 0 10px;
+}
+
+.tz_portfolio_user .AuthorAvatar {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    padding-right: 15px;
+}
+.tz_portfolio_user .AuthorAvatar img {
+    border: 1px solid #F2F0F4;
+}
+.tz_portfolio_user .AuthorAvatar img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 3px;
+}
+
+.tz_portfolio_user .AuthorDetails .AuthorName {
+    margin: 0 0 6px;
+}
+.tz_portfolio_user .AuthorDetails .AuthorName {
+    line-height: 25px;
+}
+/*typog*/
+#ja-content .TzItemPage .TzItemPageInner > h2.TzPageTitle {
+    border-bottom: 1px solid #DBDBDB;
+    color: #2E2E2E;
+    font-family: 'RokkittRegular';
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 21px;
+    padding-bottom: 20px;
+    text-transform: none;
+}
+h3.tz_title{
+    line-height: 30px !important;
+}
+
+
+.widget {
+    -moz-hyphens: auto;
+    clear: both;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+
+}
+#wp-calendar th, td {
+    line-height: 20px;
+    padding: 8px 7px !important;
+    text-align: left;
+    vertical-align: top;
+}
+.widget ul{
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 200px;
+}
+    .widget ul li{
+        background: none repeat scroll 0 0 transparent;
+        float: none;
+        position: relative;
+
+        padding: 10px;
+        font-size: 12px;
+    }
+        .widget ul li a{
+
+            border: medium none;
+            color: #757575;
+            font-size: 12px;
+
+            text-transform: uppercase;
+        }
+
+
+.TzIconHide{
+    display: none;
+}
+.TzJTscroller{
+    display: none !important;
+}
+body{
+    position: relative;
+}
+
+#video_control {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: black;
+    padding: 5px 10px;
+}
+
+#tS2{
+    margin-top:160px;
+}
+#loadaj{
+    display: none;
+}
+.tz_portfolio_video{
+    height: 455px;
+}
+.tz_portfolio_image{
+    position: relative;
+}
+.tzclear{
+    clear: both;
+}
+textarea#comment{
+    width: 100%;
+}

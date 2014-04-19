@@ -1,0 +1,136 @@
+body, p, li, blockquote p {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+h2, .h2 {
+	font-family: 'Oswald', sans-serif;
+	font-style:normal;
+	font-weight:700;
+	font-size:46px;
+	line-height:48px;
+}
+
+h3, .h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-style:normal;
+	font-weight:normal;
+	font-size:24px;
+	line-height:26px;
+}
+
+h4, .h4 {
+	font-family: 'Open Sans', sans-serif;
+	font-style:normal;
+	font-weight:normal;
+	font-size:20px;
+	line-height:26px;
+}
+
+h1, h5, h6, .h1, .h5, .h6, .btn, legend{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.slogan{
+	font-family: 'Oswald', sans-serif;
+	font-style:normal;
+	font-weight:700;
+	font-size:72px;
+	line-height:24px;
+}
+
+.navbar-nav > li > a, .wrapper h2, .footer h2{
+	font-family: 'Oswald', sans-serif;
+}
+
+.logo_txt{
+	font-family: 'Pacifico', sans-serif;
+	font-style:normal;
+	font-weight:;
+	font-size:72px;
+	line-height:72px;
+}
+
+.logo_txt_s{
+	font-family: 'Pacifico', sans-serif;
+	font-style:normal;
+	font-weight:;
+	font-size:28px;
+	line-height:28px;
+}
+
+.deepblue, .deepblue_footer, .purchase_button, .navbar, #signup input[type="submit"], .button, .wpcf7-submit, .dropdown-menu li a:hover, .dropdown-menu li a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	background:#000205;
+}
+
+.service .fa, .alt_heading h2, .flat .plan.featured:hover li.plan-name, .flat .plan:hover li.plan-name, .welcome {
+	color:#000205;
+}
+
+h2 span, h3 span, blockquote, .rht blockquote, .social .fa:hover{
+	border-color:#f60e06;
+}
+
+.slogan span, .nav > li > a:hover, .nav > li.current a, .service .fa:hover, .social .fa:hover {
+	color:#f60e06;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .flat .plan.featured li.plan-name, .custom-nav ul li:hover, .custom-nav ul li:active, #toTop i{
+	background:#f60e06!important;
+}
+
+input, .social .fa, .contFrm textarea{
+	border-color:#0b14fd;
+}
+
+h3, h4, .flat .plan li > strong, .copy, .social .fa, .copy a {
+	color:#0b14fd;
+}
+
+a.purchase_button:hover, .flat .plan li.plan-name, .button:hover, #signup input[type="submit"]:hover, .custom-nav ul li{
+	background:#0b14fd;
+}
+
+	
+.deepblue{
+    background-color: rgba(0, 2, 5, 0.9);
+}	
+
+.view-first .mask{
+    background-color: rgba(0, 2, 5, 0.8);
+}	
+/* Blog */
+
+.main-content-inner h1, h1.page-title a, .main-content-inner a, .sidebar a { 
+	color:#0b14fd;
+}
+
+.main-content-inner a:hover, .sidebar a:hover{
+	color:#f60e06;
+}
+
+.sidebar .widget-title, .btn-primary, .btn-default{
+	background:#000205;
+}
+
+.btn-primary:hover, .btn-default:hover{
+	background:#0b14fd;
+}
+
+.comments-title{
+	font-family: 'Open Sans', sans-serif;
+	font-style:normal;
+	font-weight:normal;
+	font-size:24px;
+	line-height:26px;
+}
+
+@media screen and (max-width: 940px){
+	.slogan{
+		font-size: 30px;	
+		line-height:34px;
+	}
+}

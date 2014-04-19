@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Single Page</title>
+	<atom:link href="http://kipacha.co.ke/?feed=rss2&#038;page_id=44" rel="self" type="application/rss+xml" />
+	<link>http://kipacha.co.ke</link>
+	<description>kipacha</description>
+	<lastBuildDate>Thu, 20 Feb 2014 08:55:13 +0000</lastBuildDate>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.8.3</generator>
+</channel>
+</rss>

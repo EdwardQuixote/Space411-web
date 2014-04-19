@@ -1,0 +1,1454 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" dir="ltr" lang="en">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html dir="ltr" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1024,maximum-scale=1.0">
+<title>New videos from iTUBE</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge,chrome=1">  
+<meta name="title" content="New videos from iTUBE" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="shortcut icon" href="uploads/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="New videos from iTUBE" href="rss.xml" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/bootstrap-responsive.min.css">
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/new-style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/uniform.default.min.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=all" rel="stylesheet" type="text/css">
+<!--[if IE]>
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://itube.co.ke/templates/default/css/new-style-ie.css">
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<script type="text/javascript">
+ var MELODYURL = "http://itube.co.ke";
+ var MELODYURL2 = "http://itube.co.ke";
+ var TemplateP = "http://itube.co.ke/templates/default";
+ var _LOGGEDIN_ =  false ;
+</script>
+
+<script type="text/javascript">
+ var pm_lang = {
+	lights_off: "Lights off",
+	lights_on: "Lights on",
+	validate_name: "Please enter a name",
+	validate_username: "Please enter a username",
+	validate_pass: "Please provide a password",
+	validate_captcha: "Please enter the validation code",
+	validate_email: "Please enter a valid email address",
+	validate_agree: "Please accept our policy",
+	validate_name_long: "Your name must consist of at least 2 characters",
+	validate_username_long: "Your username must consist of at least 2 characters",
+	validate_pass_long: "Your password must be at least 5 characters long",
+	validate_confirm_pass_long: "Please enter the same password as above",
+	choose_category: "Please choose a category",
+ 	validate_select_file: "No file was selected/uploaded.",
+ 	validate_video_title: "Please enter a title for this video",
+	onpage_delete_favorite_confirm: "You are about to remove this video from your favorites list. Click 'Cancel' to stop, 'OK' to delete.",
+	please_wait: "Loading...",
+	// upload video page
+	swfupload_status_uploaded: "Uploaded",
+	swfupload_status_pending: "Continue with the rest of the form.",
+	swfupload_status_queued: "Queued",
+	swfupload_status_uploading: "Uploading...",
+	swfupload_file: "File",
+	swfupload_btn_select: "Select",
+	swfupload_btn_cancel: "Cancel",
+	swfupload_status_error: "Error",
+	swfupload_error_oversize: "Size of the selected file(s) is greater than allowed limit",
+	swfupload_friendly_maxsize: ""
+ }
+</script>
+
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<style type="text/css"></style>
+</head>
+<body>
+
+<header class="wide-header" id="overview">
+<div class="row-fluid fixed960">
+    <div class="span3">
+	  	  	<a href="index.htm" rel="home"><img src="uploads/custom-logo.png" alt="iTUBE" title="iTUBE" border="0" /></a>
+	     </div>
+   
+   <div class="span6 wide-header-pad">
+        <form action="search.htm" method="get" id="search" name="search" onsubmit="return validateSearch('true');">
+    <div class="controls">
+      <div class="input-append">
+        <input class="span10" id="appendedInputButton" size="16" name="keywords" type="text" placeholder="Search" x-webkit-speech="x-webkit-speech" onwebkitspeechchange="this.form.submit();" onkeyup="lookup(this.value);" onblur="fill();" autocomplete="off"><button class="btn" type="submit"><i class="icon-search"></i></button>
+      </div>
+      <div class="suggestionsBox" id="suggestions" style="display: none;">
+          <div class="suggestionList input-xlarge" id="autoSuggestionsList">
+          </div>
+      </div>
+    </div>
+    </form>
+       </div>
+
+    <div class="span3 hidden-phone">
+    <div id="user-pane" class="border-radius4">
+        <div class="user-data">
+        <span class="user-avatar">
+                <a href="login.htm"><img src="templates/default/img/pm-avatar.png" width="40" height="40" alt=""></a>
+        <span class="greet-links">
+        <div class="ellipsis"><strong>Welcome</strong></div>
+        <span class="avatar-img"><a class="primary ajax-modal" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="newvideos.htm#header-login-form">Login</a> / <a href="register.htm">Register</a></span>
+        </span>
+        </div>
+                </span>
+    
+                <div class="modal hide" id="header-login-form" role="dialog" aria-labelledby="header-login-form-label"> <!-- login modal -->
+            <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="header-login-form-label">Login</h3>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <form class="form-horizontal" name="login_form" id="login-form" method="post" action="login.htm">
+  <fieldset>
+  <div class="control-group">
+    <label class="control-label" for="username">Username/Email</label>
+    <div class="controls"><input type="text" class="hocusfocus input-large" id="hocusfocus" name="username" value=""></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="pass">Password</label>
+    <div class="controls"><input type="password" class="input-large" id="pass" name="pass" maxlength="32" autocomplete="off"></div>
+  </div>
+  <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+        <input type="checkbox" name="remember" value="1" > <small>Remember me</small>
+        </label>
+      </div>
+  </div>
+
+    <div class="">
+        <div class="controls">
+        <button type="submit" name="Login" value="Login" class="btn btn-blue" data-loading-text="Login">Login</button>
+        <span class="signup"><small><a href="login_2.htm">Forgot your password?</a></small></span>
+        </div>
+    </div>
+  </fieldset>
+</form>            </div>
+        </div>
+            </div>
+    
+	    </div>
+</div>
+</header>
+<nav class="wide-nav">
+    <div class="row-fluid fixed960">
+        <span class="span12">
+		<div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse">
+                    <ul class="nav">
+                    
+                      <li><a href="index.htm" class="wide-nav-link">Home</a></li>
+                      <li class="dropdown">
+                        <a href="newvideos.htm#" class="dropdown-toggle wide-nav-link" data-toggle="dropdown">Category <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <ul id='ul_categories'>
+<li class=""><a href="category_2.htm" class="">Animals</a></li>
+<li class=""><a href="category_14.htm" class="">Art</a></li>
+<li class=""><a href="category.htm" class="">Auto-Motor</a></li>
+<li class=""><a href="category_3.htm" class="">Celeb</a></li>
+<li class=""><a href="category_5.htm" class="">College</a></li>
+<li class=""><a href="category_4.htm" class="">Funny</a></li>
+<li class=""><a href="category_6.htm" class="">Gaming</a></li>
+<li class=""><a href="category_7.htm" class="">Lifestyle</a></li>
+<li class=""><a href="category_8.htm" class="">Movies</a></li>
+<li class=""><a href="category_9.htm" class="">Music</a></li>
+<li class=""><a href="category_10.htm" class="">News</a></li>
+<li class=""><a href="category_11.htm" class="">Sports</a></li>
+<li class=""><a href="category_13.htm" class="">TV</a></li>
+<li class=""><a href="category_12.htm" class="">Tech</a></li>
+<li class=""><a href="category_17.htm" class="">Travel</a></li>
+<li class=""><a href="category_15.htm" class="">Webcam</a></li>
+<li class=""><a href="category_16.htm" class="">Live</a></li>
+
+</ul>
+                        </ul>
+                      </li>
+                      
+					                        <li class="dropdown">
+                        <a href="newvideos.htm#" class="dropdown-toggle wide-nav-link" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+						<ul id='ul_categories'>
+<li><a href="article.htm">Latest articles</a></li><li ><a href="article_2.htm">Most popular</a></li><li class=""><a href="article_3.htm" class="">This is Kenya</a></li>
+
+</ul>
+                        </ul>
+                      </li>
+					                        <li><a href="topvideos.htm" class="wide-nav-link">Top videos</a></li>
+                      <li><a href="newvideos.htm" class="wide-nav-link">New videos</a></li>
+                      <li><a href="http://itube.co.ke/randomizer.php" rel="nofollow" class="wide-nav-link">Random video</a></li>
+                      		
+                      <li><a href="contact_us.htm" class="wide-nav-link">Contact us</a></li>
+                      		
+                                          </ul>
+                    
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div><!-- /navbar -->
+       </span>
+    </div>
+</nav>
+<a id="top"></a>
+<div class="pm-ad-zone" align="center"><!-- BEGIN JS TAG - Itube.co.ke 728x90 < - DO NOT MODIFY -->
+<SCRIPT SRC="http://ads.fidelity-media.com/ttj?id=1160152&size=728x90&promo_sizes=300x50,320x50,468x60,216x36&promo_alignment=center" TYPE="text/javascript"></SCRIPT>
+<!-- END TAG -->
+</div>
+<div id="wrapper">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+        <div id="primary">
+		<h1 class="entry-title">Recently added videos</h1>
+        
+        <div class="btn-group btn-group-sort opac5">
+        <button class="btn btn-small" id="list"><i class="icon-th"></i> </button>
+        <button class="btn btn-small" id="grid"><i class="icon-th-list"></i> </button>
+        </div>
+
+		<form class="form-inline li-dropdown-inside opac7">
+		Added 
+		<select name="categories" class="inp-small" size="1" onChange="javascript:document.location=this.value;">
+		<option value="" selected="selected">Select one</option>
+		<option value="http://itube.co.ke/newvideos.php">All time</option>
+		<option value="http://itube.co.ke/newvideos.php?d=today">Today</option>
+		<option value="http://itube.co.ke/newvideos.php?d=yesterday">Yesterday</option>
+		<option value="http://itube.co.ke/newvideos.php?d=month">This month</option>
+		</select>
+        </form>
+<hr />
+<ul class="pm-ul-new-videos thumbnails" id="pm-grid">
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_2.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EDsvO.jpg" alt="Dawn of the Planet of the Apes -  TV Spot" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_2.htm" class="pm-title-link" title="Dawn of the Planet of the Apes -  TV Spot">Dawn of the Planet of the Apes -  TV Spot</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:09:29-0500" title="Tuesday, April 8, 2014 7:09 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,437 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">A growing nation of genetically evolved apes led by Caesar is threatened by a band of human survivors of the devastating virus unleashed a decade earlier. They reach a fragile peace, but it proves short-lived, as both sides are brought to the brink of a w</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/EBGNJ.jpg" alt="How To Train Your Dragon 2 - Itchy Armpit" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch.htm" class="pm-title-link" title="How To Train Your Dragon 2 - Itchy Armpit">How To Train Your Dragon 2 - Itchy Armpit</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:08:02-0500" title="Tuesday, April 8, 2014 7:08 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,515 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">How To Train Your Dragon 2 - Itchy Armpit</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_3.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/ECjbM.jpg" alt="The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_3.htm" class="pm-title-link" title="The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014">The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:05:13-0500" title="Tuesday, April 8, 2014 7:05 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,415 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014 2014 Movies http://teaser-trailer.com/movies-2014.html</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_4.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D68i4.jpg" alt="&quot;Shifter&quot; - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_4.htm" class="pm-title-link" title="&quot;Shifter&quot; - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD">"Shifter" - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:03:39-0500" title="Tuesday, April 8, 2014 7:03 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,525 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">www.hallivisbrothers.com contact:info@hallivisbrothers.com Like us on Facebook: https://www.facebook.com/SHIFTERFILM Los Angeles - 2023. James Striker is on the verge of bringing down the oppressive government that has crushed all freedom in the United St</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_5.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EDy5p.jpg" alt="Petit Prague" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_5.htm" class="pm-title-link" title="Petit Prague">Petit Prague</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:01:48-0500" title="Tuesday, April 8, 2014 7:01 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,435 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Prague, the Czech capital, is also known as the "Golden City". Take a boat ride on the Vltava and travel through this amazing city and see all the major attractions from incredible vantage points. The busy Charles Bridge has never looked more adorable. A </p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_6.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EAXsu.jpg" alt="The Ultimate Boat Fails Compilation" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_6.htm" class="pm-title-link" title="The Ultimate Boat Fails Compilation">The Ultimate Boat Fails Compilation</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T06:59:58-0500" title="Tuesday, April 8, 2014 6:59 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,463 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">The Ultimate Boat Fails Compilation</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_8.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D_0xA.jpg" alt="Schwarzenegger and Fallon Star in Hilarious QVC Skit" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_8.htm" class="pm-title-link" title="Schwarzenegger and Fallon Star in Hilarious QVC Skit">Schwarzenegger and Fallon Star in Hilarious QVC Skit</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T06:57:28-0500" title="Tuesday, April 8, 2014 6:57 AM">1 week ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,475 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">As part of 'The Tonight Show Starring Jimmy Fallon', the duo took part in a QVC skit, which showcased the men donning blue aprons with Fallon being the lucky one who got to wear a very realistic blonde wig. What a pair Jimmy Fallon and Arnold Schwarzenegg</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_11.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EEw3k.jpg" alt="Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_11.htm" class="pm-title-link" title="Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts">Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-04T04:13:39-0500" title="Friday, April 4, 2014 4:13 AM">2 weeks ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>10.5k Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Gwyneth Paltrow ignited a firestorm after telling E! News that she thinks working as a movie star as a mom is hard, whereas moms who work regular office jobs have it easier. As John Basedow (@JohnBasedow) reports, this comment did not sit well on Twitter.</p>
+		
+			    <span class="pm-video-li-info">
+	        <span class="label label-featured">Featured</span>
+	    </span>
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_9.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D43pv.jpg" alt="Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_9.htm" class="pm-title-link" title="Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About">Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:45:29-0500" title="Wednesday, March 19, 2014 4:45 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,728 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Dressed in shades of green St. Patrick's Day costumes Tim (Kirby Morrow), Jesse (David Lewis), Davinder (Sean Amsing) and Josh (Matty Granger) share nips of green beer and drams of concealed whiskey at their local Family Drop-in Centre. Here, they share a</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_10.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DxaPt.jpg" alt="The Mashup Getdown Brings American Hustle to Rapping Hustlers" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_10.htm" class="pm-title-link" title="The Mashup Getdown Brings American Hustle to Rapping Hustlers">The Mashup Getdown Brings American Hustle to Rapping Hustlers</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:42:05-0500" title="Wednesday, March 19, 2014 4:42 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,707 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">"American Hustlers" is the fourth installment of "The Mashup Getdown" in which the "American Hustle" movie meets rapping hustlers. American Hustle is a 2013 American crime comedy-drama film directed by David O. Russell, loosely based on the FBI ABSCAM ope</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_12.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Share the latest trailer of the upcoming movie The Muppets: Most Wanted" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_12.htm" class="pm-title-link" title="Share the latest trailer of the upcoming movie The Muppets: Most Wanted">Share the latest trailer of the upcoming movie The Muppets: Most Wanted</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:40:09-0500" title="Wednesday, March 19, 2014 4:40 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,918 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">http://www.myfilm.gr/13268 - https://www.facebook.com/myfilm.gr In theaters: March 21th, 2014 Copyright &copy; 2014 Walt Disney Studios Motion Pictures Muppets Most Wanted - trailer #2 [HD] (2014) &tau;&omicron;&upsilon; &Tau;&zeta;έ&iota;&mu;&sigmaf; &Mu</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_13.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DycSf.jpg" alt="Share the latest trailer of the upcoming movie The Muppets: Most Wanted" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_13.htm" class="pm-title-link" title="Share the latest trailer of the upcoming movie The Muppets: Most Wanted">Share the latest trailer of the upcoming movie The Muppets: Most Wanted</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:40:09-0500" title="Wednesday, March 19, 2014 4:40 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,732 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">http://www.myfilm.gr/13268 - https://www.facebook.com/myfilm.gr In theaters: March 21th, 2014 Copyright &copy; 2014 Walt Disney Studios Motion Pictures Muppets Most Wanted - trailer #2 [HD] (2014) &tau;&omicron;&upsilon; &Tau;&zeta;έ&iota;&mu;&sigmaf; &Mu</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=088b88672" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D4IL3.jpg" alt="BuzzFeed Has Just Hired New Interns: The Muppets!" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=088b88672" class="pm-title-link" title="BuzzFeed Has Just Hired New Interns: The Muppets!">BuzzFeed Has Just Hired New Interns: The Muppets!</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:38:18-0500" title="Wednesday, March 19, 2014 4:38 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,776 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">In case you were wondering, the Muppets do not make good interns.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=c65a7d79a" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D4qqC.jpg" alt="Share the Best Redhead Fails the Internet Has to Offer" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=c65a7d79a" class="pm-title-link" title="Share the Best Redhead Fails the Internet Has to Offer">Share the Best Redhead Fails the Internet Has to Offer</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:36:27-0500" title="Wednesday, March 19, 2014 4:36 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,783 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">In honor of St. Patrick's Day this coming Monday, we proudly present the best Redhead fails the internet has to offer.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=8ad6bc253" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D6lPt.jpg" alt="This Diver Puts Sharks in a Trance" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=8ad6bc253" class="pm-title-link" title="This Diver Puts Sharks in a Trance">This Diver Puts Sharks in a Trance</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:34:15-0500" title="Wednesday, March 19, 2014 4:34 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,744 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">A diver puts a Caribbean reef shark into a trance using just his hands. British underwater photographer Simon Enderby captured the amazing moment during a routine feeding dive off the coast of the Bahamas. One diver can be seen reaching out to touch the s</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=76178ee58" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Geo Da Silva &amp; Jack Mazzoni: the Latest Hit by Blanco y Negro Music" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=76178ee58" class="pm-title-link" title="Geo Da Silva &amp; Jack Mazzoni: the Latest Hit by Blanco y Negro Music">Geo Da Silva & Jack Mazzoni: the Latest Hit by Blanco y Negro Music</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:32:50-0500" title="Wednesday, March 19, 2014 4:32 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,829 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Buy It On/ C&oacute;mpralo: iTunes: Coming Soon! Google Play: Coming Soon! Beatport: Coming Soon! Listen/ Esc&uacute;chalo: Spotify: Coming Soon! Deezer: Coming Soon! Sigue todas nuestras novedades/ Discover new videos: http://smarturl.it/BYNSub Disfruta </p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=294398f01" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D4hIc.jpg" alt="Discover the Weirdest Tech Featured at South by Southwest" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=294398f01" class="pm-title-link" title="Discover the Weirdest Tech Featured at South by Southwest">Discover the Weirdest Tech Featured at South by Southwest</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:28:05-0500" title="Wednesday, March 19, 2014 4:28 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,765 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Real-life &ldquo;Mission Impossible&rdquo;? Personal satellites? Finger guns? It must be South by Southwest. Personal Tech columnist Geoffrey Fowler reports on the weirdest tech in Austin. Copyright 2014, Dow Jones &amp; Company, Inc.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="watch_20.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D6qQH.jpg" alt="The Gootecks and Mike Ross Introduce You to SXSW's Cosplay Event" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="watch_20.htm" class="pm-title-link" title="The Gootecks and Mike Ross Introduce You to SXSW's Cosplay Event">The Gootecks and Mike Ross Introduce You to SXSW's Cosplay Event</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:26:17-0500" title="Wednesday, March 19, 2014 4:26 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,853 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Gootecks interviews DugFinn, the fabulous host and organizer of the Cosplay Competition on the SXSW Geek Stage at Palmer Events Center's SXSW Gaming Expo 2014 in Austin, TX. Check out some of the amazing costumes! Dugfinn is an award winning cosplayer and</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=b7c23f5a4" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D63eP.jpg" alt="Laura Leishman is out with the best artists in town: Tiesto, Liz, and Lady Gaga!" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=b7c23f5a4" class="pm-title-link" title="Laura Leishman is out with the best artists in town: Tiesto, Liz, and Lady Gaga!">Laura Leishman is out with the best artists in town: Tiesto, Liz, and Lady Gaga!</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:20:15-0500" title="Wednesday, March 19, 2014 4:20 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,667 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Last day of Laura Leishman at SXSW 2014! Tiesto djing in a shack! Liz &amp; Shy Girls sing their favourite Disney songs! I get front row for Lady Gaga (sort of) !</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    <span class="pm-label-duration border-radius3 opac7">00:48</span>	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=a39df32b3" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Diskussion zu dem Thema Anti-Aging in Social Media" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=a39df32b3" class="pm-title-link" title="Diskussion zu dem Thema Anti-Aging in Social Media">Diskussion zu dem Thema Anti-Aging in Social Media</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=expalaspresse">AnnikaHeinz</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T02:31:37-0500" title="Wednesday, March 19, 2014 2:31 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>43 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Die ewige Schönheit war schon immer eine Sehnsucht der Menschen. Gleichzeitig wird unsere Gesellschaft im Schnitt jedoch älter. "Anti-Aging" ist das Stichwort aus der heutigen Zeit. Was kann ich tun, um jung zu bleiben? Dieser Informationsaustausch soll n</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    <span class="pm-label-duration border-radius3 opac7">00:48</span>	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=83aecd9d8" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Die Thematik Burn-Out in den sozialen Netzwerken" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=83aecd9d8" class="pm-title-link" title="Die Thematik Burn-Out in den sozialen Netzwerken">Die Thematik Burn-Out in den sozialen Netzwerken</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=expalaspresse">AnnikaHeinz</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T02:31:37-0500" title="Wednesday, March 19, 2014 2:31 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>37 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Stress lässt sich kaum vermeiden... aber Burnout kann man verhindern. Zuviel Belastung kann nicht nur unangenehm sein. Es kann sogar krank machen. Und wenn wir nicht aufpassen, entsteht daraus ein starker Burn-Out mit schwerwiegenden Folgen. Aber was könn</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=4b7c6cb9a" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://itube.co.ke/uploads/thumbs/4b7c6cb9a-1.jpg" alt="Ist die chinesische Goji-Beere wirklich so gesund?" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=4b7c6cb9a" class="pm-title-link" title="Ist die chinesische Goji-Beere wirklich so gesund?">Ist die chinesische Goji-Beere wirklich so gesund?</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=expalaspresse">AnnikaHeinz</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T02:31:37-0500" title="Wednesday, March 19, 2014 2:31 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>54 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">http://www.y54.de/umor Die Goji-Frucht wird von mehreren Forschern als wertvolles Nahrungsmittel mit einem hohen Gehalt an Vital- und Nährstoffen ausgepriesen. Für die Diskussion rund um die Beere gibt es nun auch Plattformen in den Sozialen Netzwerken.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=44faa1e51" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DcOgz.jpg" alt="2014 Oscar Nominees: Best Supporting Actress" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=44faa1e51" class="pm-title-link" title="2014 Oscar Nominees: Best Supporting Actress">2014 Oscar Nominees: Best Supporting Actress</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:28:57-0600" title="Friday, March 7, 2014 4:28 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>879 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Check out 2014 Oscar nominees for best supporting actress.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=739ee5da9" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Dy1zr.jpg" alt="Harry Potter Retold: Awesome Stories!" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=739ee5da9" class="pm-title-link" title="Harry Potter Retold: Awesome Stories!">Harry Potter Retold: Awesome Stories!</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:16:47-0600" title="Friday, March 7, 2014 4:16 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>924 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Watch Harry Potter Retold By People Who've Never Seen Or Read It Spoiler alert: These people have no idea what they're talking about.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=59b0135ca" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DxJlX.jpg" alt="Obama and Biden film a 'workout' video together" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=59b0135ca" class="pm-title-link" title="Obama and Biden film a 'workout' video together">Obama and Biden film a 'workout' video together</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:15:14-0600" title="Friday, March 7, 2014 4:15 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>936 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">US President Barack Obama and Vice President Joe Biden have been jogging around the White House to show support for first lady Michelle Obama's nationwide "Let's Move" campaign.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=0d44aa609" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DwPD2.jpg" alt="The Ultimate Bad Acting Compilation" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=0d44aa609" class="pm-title-link" title="The Ultimate Bad Acting Compilation">The Ultimate Bad Acting Compilation</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:13:51-0600" title="Friday, March 7, 2014 4:13 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>931 Views / 1 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Some actors are so bad that they're actually better than those so-called "good actors."</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=26265b203" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DyuXx.jpg" alt="The Oscars in 2 minutes" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=26265b203" class="pm-title-link" title="The Oscars in 2 minutes">The Oscars in 2 minutes</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:10:11-0600" title="Friday, March 7, 2014 4:10 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>885 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">From red carpet falls to rising stars, the 2014 Academy Awards hosted by Ellen DeGeneres was a night to remember.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=faec8bedd" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DyzYB.jpg" alt="Micro Macau" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=faec8bedd" class="pm-title-link" title="Micro Macau">Micro Macau</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:07:38-0600" title="Friday, March 7, 2014 4:07 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>998 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Macau has become known as the "Las Vegas of the Far East". Travel through the city and the amazing casinos of this former Portuguese colony in miniature size. Macau has never looked more adorable. A time-lapse tilt-shift film by Joerg Daiber. Facebook: ht</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=308f7c86a" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DxNgT.jpg" alt="10 Funniest Oscar Moments" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=308f7c86a" class="pm-title-link" title="10 Funniest Oscar Moments">10 Funniest Oscar Moments</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-06T06:26:19-0600" title="Thursday, March 6, 2014 6:26 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>944 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Check out the 10 funniest Oscar moments.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=5fc4180f3" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="n/a" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=5fc4180f3" class="pm-title-link" title="n/a">n/a</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=jean01r">JeanRhee</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-03T01:46:09-0600" title="Monday, March 3, 2014 1:46 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>49 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">You are seeing this because the user has not finished the upload process by submitting the Upload Form.Now, you can either Edit & Approve this item or Delete it.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    <span class="pm-label-duration border-radius3 opac7">04:09</span>	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=1aa70ea10" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Plantar Fibroma Information and Treatment" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=1aa70ea10" class="pm-title-link" title="Plantar Fibroma Information and Treatment">Plantar Fibroma Information and Treatment</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=jean01r">JeanRhee</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-03T01:46:09-0600" title="Monday, March 3, 2014 1:46 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>91 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Dr. J. Robert Faux explains Plantar Fibromas and how to live with and treat them.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=192a26612" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Dstyf.jpg" alt="Shark Attacks Camera" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=192a26612" class="pm-title-link" title="Shark Attacks Camera">Shark Attacks Camera</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:45:18-0600" title="Thursday, February 27, 2014 12:45 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,844 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Shark Bite: Hammerhead Bares Its Teeth For Diver's Camera A SHARK reveals its fearsome teeth - trying to take a bite out of a camera on the ocean floor. This close encounter was captured by wildlife photographer Amos Nachoum, 63, from Israel, during one o</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=6a4c89630" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Dthuf.jpg" alt="Best Fails of the Week 3 February 2014" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=6a4c89630" class="pm-title-link" title="Best Fails of the Week 3 February 2014">Best Fails of the Week 3 February 2014</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:43:53-0600" title="Thursday, February 27, 2014 12:43 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>2,235 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">This Week's Best Fails</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=43e103c33" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DtIzp.jpg" alt="10 Things You Didn't Know About South Park" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=43e103c33" class="pm-title-link" title="10 Things You Didn't Know About South Park">10 Things You Didn't Know About South Park</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:42:30-0600" title="Thursday, February 27, 2014 12:42 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,865 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Talking poops, Jesus fighting Santa and Cartman. It can o...</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=18074187f" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Ds5O3.jpg" alt="Discover &quot;Parked&quot;: Brand New Series" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=18074187f" class="pm-title-link" title="Discover &quot;Parked&quot;: Brand New Series">Discover "Parked": Brand New Series</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:41:15-0600" title="Thursday, February 27, 2014 12:41 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,883 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Set in the Pacific Northwest, PARKED follows a group of early 30&rsquo;s long-time friends now faced with the realities of life as they come face to face with the fact that who they are isn&rsquo;t who they imagined they&rsquo;d be and if they aren&rsquo;</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=2fa8a59cc" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Dss8Z.jpg" alt="Sonic (Remi Gaillard)" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=2fa8a59cc" class="pm-title-link" title="Sonic (Remi Gaillard)">Sonic (Remi Gaillard)</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:39:52-0600" title="Thursday, February 27, 2014 12:39 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,873 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Apr&egrave;s Mario et Pacman, R&eacute;mi continue d'explorer l'univers des jeux vid&eacute;os ! Voici Sonic... La police !</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=6da705f14" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/Dm0Et.jpg" alt="Chinese Man  Ft. Tumi - Once Upon A Time (Official Video)" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=6da705f14" class="pm-title-link" title="Chinese Man  Ft. Tumi - Once Upon A Time (Official Video)">Chinese Man  Ft. Tumi - Once Upon A Time (Official Video)</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:38:40-0600" title="Thursday, February 27, 2014 12:38 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,826 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Once Upon A Time EP - Out 24.02.2014 (Vinyl &amp; Digital) Videoclip shot and animated by Christian Volckman iTunes : http://smarturl.it/cm-onceuponatime vinyl : http://smarturl.it/cmr026-vinyl 1 - Once Upon A Time feat. Tumi &amp; Zubz 2 - Once Upon A Ti</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=305a1db9d" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DuYqd.jpg" alt="US seeks extradition of world's most wanted man" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=305a1db9d" class="pm-title-link" title="US seeks extradition of world's most wanted man">US seeks extradition of world's most wanted man</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:37:00-0600" title="Thursday, February 27, 2014 12:37 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,893 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">After evading capture for years, the world's most wanted drugs trafficker is finally paraded before the media in Mexico City on live TV. Joaquin Guzman -- known as El Chapo or "Shorty" -- surrounded by heavily armed troops boards a helicopter bound for pr</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=b8ae64f0e" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DuiIn.jpg" alt="Ukrainian officials issue arrest warrant for Yanukovich" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=b8ae64f0e" class="pm-title-link" title="Ukrainian officials issue arrest warrant for Yanukovich">Ukrainian officials issue arrest warrant for Yanukovich</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:35:16-0600" title="Thursday, February 27, 2014 12:35 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,801 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Impeached Ukrainian President Viktor Yanukovich is officially a wanted man. Acting interior minister Arsen Avakov confirmed via Facebook that Yanukovich is wanted for mass murder of peaceful citizens. This comes after 82 people were killed last week in cl</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=52217096c" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DrHaV.jpg" alt="Guardians of the Galaxy" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=52217096c" class="pm-title-link" title="Guardians of the Galaxy">Guardians of the Galaxy</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-27T00:33:03-0600" title="Thursday, February 27, 2014 12:33 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,831 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Exclusive Trailer: Marvel's Guardians of the Galaxy Movies in 2014 http://teaser-trailer.com/movies-2014.html Marvel's Guardians of the Galaxy http://teaser-trailer.com/movie/guardians-of-the-galaxy</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    				</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=550611abe" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Traditionelle Chinesische Medizin (TCM) auf Facebook &amp; co." width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=550611abe" class="pm-title-link" title="Traditionelle Chinesische Medizin (TCM) auf Facebook &amp; co.">Traditionelle Chinesische Medizin (TCM) auf Facebook & co.</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="http://itube.co.ke/profile.php?u=expalaspresse">AnnikaHeinz</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-26T00:40:10-0600" title="Wednesday, February 26, 2014 12:40 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>45 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">http://www.y54.de/6sjj Mit Beginn des Jahres 2014 möchte sich ein uraltes Thema der Medizin auch in den neuen Sozialen Medien etablieren. Die Redaktion für Themenspecials von expalas in Frankfurt am Main hat für die Traditionelle Chinesische Medizin (TCM)</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=635726ab1" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/AEyu2.jpg" alt="Rihanna goes topless" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=635726ab1" class="pm-title-link" title="Rihanna goes topless">Rihanna goes topless</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T03:29:29-0600" title="Monday, February 24, 2014 3:29 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>939 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Rihanna gets racy in the album artwork for "Loud" going topless and posing nearly naked for the sexy photos</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=c990ad53e" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/AFnxv.jpg" alt="Freida Pinto’s First Love Making Scene In Immortals – Hot News" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=c990ad53e" class="pm-title-link" title="Freida Pinto’s First Love Making Scene In Immortals – Hot News">Freida Pinto’s First Love Making Scene In Immortals – Hot News</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:57:04-0600" title="Monday, February 24, 2014 2:57 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,231 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Slumdog Millionaire actress Frieda Pinto seem to be hitting the headlines for her first extremely bold sex scene in her upcoming movie Immortals directed by Tarsem Singh. Take a look at the video to know more about the steamy scene. Visit us at http://www</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=a642e60f4" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/ApcO5.jpg" alt="PONY PONY RUN RUN - HEY YOU [OFFICIAL VIDEOCLIP]" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=a642e60f4" class="pm-title-link" title="PONY PONY RUN RUN - HEY YOU [OFFICIAL VIDEOCLIP]">PONY PONY RUN RUN - HEY YOU [OFFICIAL VIDEOCLIP]</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:53:30-0600" title="Monday, February 24, 2014 2:53 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,900 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Pony Pony Run Run - Hey youReal : Dan Assayag &amp; Mathieu Caulet2&egrave;me Album "Pony Pony Run Run" sortie ce lundi 27 f&eacute;vrier!Commandez l'album sur iTunes: http://bit.ly/ponypony_albumListen to it on myspace! / en &eacute;coute sur myspace! ht</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=087f7703d" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/AH9mC.jpg" alt="Sıla - &quot;Acısa da Öldürmez&quot;" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=087f7703d" class="pm-title-link" title="Sıla - &quot;Acısa da Öldürmez&quot;">Sıla - "Acısa da Öldürmez"</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:51:22-0600" title="Monday, February 24, 2014 2:51 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,834 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Konuşmadığımız Şeyler Var (2010) - SONY MUSIC ENTERTAINMENT</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=a9400ec7a" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/AnRIS.jpg" alt="Katy Perry - Teenage Dream" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=a9400ec7a" class="pm-title-link" title="Katy Perry - Teenage Dream">Katy Perry - Teenage Dream</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:46:30-0600" title="Monday, February 24, 2014 2:46 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,942 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Katy Perry - Teenage Dream</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=0c32fafc2" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/BPWgy.jpg" alt="Lamborghini Press Conference at 2013 Geneva Motorshow" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=0c32fafc2" class="pm-title-link" title="Lamborghini Press Conference at 2013 Geneva Motorshow">Lamborghini Press Conference at 2013 Geneva Motorshow</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:41:40-0600" title="Monday, February 24, 2014 2:41 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,929 Views / 1 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">General views and soundbites from Lamborghini Press Conference at 2013 Geneva Motorshow where the new Lamborghini Veneno has been presented.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=71bad5ec6" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/BTqlm.jpg" alt="Beyonce Teases New Single In Pepsi Ad" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=71bad5ec6" class="pm-title-link" title="Beyonce Teases New Single In Pepsi Ad">Beyonce Teases New Single In Pepsi Ad</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:37:22-0600" title="Monday, February 24, 2014 2:37 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,848 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">A new Pepsi ad features Beyonce in a dance-off with her old music video personalities like 'Single Ladies,' 'Crazy In Love,' and 'Bootylicious.' Her new single 'Grown Woman,' produced by Timbaland, plays in the background and is the first official track o</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=0cd73608f" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/Dm2kn.jpg" alt="The Ultimate Kissing Fails Compilation" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=0cd73608f" class="pm-title-link" title="The Ultimate Kissing Fails Compilation">The Ultimate Kissing Fails Compilation</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-20T01:28:36-0600" title="Thursday, February 20, 2014 1:28 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,912 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Sometimes kissing can really be the kiss of death.</p>
+		
+			</div>
+  </li>
+		
+  <li>
+	<div class="pm-li-video">
+	    <span class="pm-video-thumb pm-thumb-138 pm-thumb border-radius2">
+	    <span class="pm-video-li-thumb-info">
+	    	    		<span class="label label-pop">Popular</span>		</span>
+	    
+	    <a href="http://itube.co.ke/watch.php?vid=bff5243f0" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DnByo.jpg" alt="Transcendence - Johnny Depp, from Pirate to God!" width="145"><span class="vertical-align"></span></span></a>
+	    </span>
+	    
+	    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=bff5243f0" class="pm-title-link" title="Transcendence - Johnny Depp, from Pirate to God!">Transcendence - Johnny Depp, from Pirate to God!</a></h3>
+	    <div class="pm-video-attr">
+	        <span class="pm-video-attr-author">by <a href="profile.htm">Admin</a></span>
+	        <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-20T01:27:22-0600" title="Thursday, February 20, 2014 1:27 AM">1 month ago</time></small></span>
+	        <span class="pm-video-attr-numbers"><small>1,939 Views / 0 Likes</small></span>
+		</div>
+	    <p class="pm-video-attr-desc">Transcendence - Johnny Depp, from Pirate to God!</p>
+		
+			</div>
+  </li>
+		
+</ul>
+
+
+<div class="clearfix"></div>
+<div class="pagination pagination-centered">
+    <ul>
+				<li class="disabled">
+			<a href="newvideos.htm#" onclick="return false;">&laquo;</a>
+		</li>
+				<li class="active">
+			<a href="newvideos.htm#" onclick="return false;">1</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=2">2</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=3">3</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=4">4</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=5">5</a>
+		</li>
+				<li class="disabled">
+			<a href="newvideos.htm#" onclick="return false;">...</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=9">9</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=10">10</a>
+		</li>
+				<li class="">
+			<a href="http://itube.co.ke/newvideos.php?&amp;page=2">&raquo;</a>
+		</li>
+			</ul>
+</div>
+		</div><!-- #primary -->
+        </div><!-- #content -->
+      </div><!-- .row-fluid -->
+    </div><!-- .container-fluid -->
+<a id="back-top" class="hidden-phone hidden-tablet" title="Go Up">
+    <i class="icon-chevron-up"></i>
+    <span></span>
+</a>
+</div><!-- end wrapper -->
+
+<div class="row-fluid fixed960">
+    <div class="row-fluid">
+        <a href="rss.xml" title="New videos from iTUBE RSS" class="pm-rss-link"><i class="pm-vc-sprite ico_rss"></i> RSS</a>
+        </div>
+</div>
+
+<div class="pm-ad-zone" align="center"><!-- BEGIN JS TAG - Itube.co.ke 728x90 < - DO NOT MODIFY -->
+<SCRIPT SRC="http://ads.fidelity-media.com/ttj?id=1160152&size=728x90&promo_sizes=300x50,320x50,468x60,216x36&promo_alignment=center" TYPE="text/javascript"></SCRIPT>
+<!-- END TAG -->
+</div>
+    
+<footer>
+<div class="row-fluid fixed960">
+	<div class="span8">
+    <ul>
+    			<li><a href="index.htm">Home</a></li>
+        <li><a href="contact_us.htm">Contact us</a></li>
+        <li><a href="register.htm">Register</a></li>                                      </ul>
+    <p>
+    iTUBE.<br />    &copy; 2014 iTUBE. All rights reserved
+    </p>
+    </div>
+    <div class="span3">
+	 
+    </div>
+    <div class="span1">
+         <ul id="lang_selector">
+      <div class="btn-group dropup lang-selector hidden-phone" id="lang-selector">
+      <a class="btn btn-link dropdown-toggle" data-toggle="dropdown" href="newvideos.htm#"><img src="lang/flags/us.png" width="16" height="10" alt="English" title="English" align="texttop"> <span class="hide">English</span> <span class="caret"></span></a>
+
+      <ul class="dropdown-menu border-radius0 pullleft lang_submenu">
+                                 <li><a href="newvideos.htm#" title="Albanian" name="2" id="lang_select_2">Albanian</a></li>
+                           <li><a href="newvideos.htm#" title="Arabic" name="3" id="lang_select_3">Arabic</a></li>
+                           <li><a href="newvideos.htm#" title="Brazilian" name="4" id="lang_select_4">Brazilian</a></li>
+                           <li><a href="newvideos.htm#" title="Bulgarian" name="5" id="lang_select_5">Bulgarian</a></li>
+                           <li><a href="newvideos.htm#" title="Croatian" name="6" id="lang_select_6">Croatian</a></li>
+                           <li><a href="newvideos.htm#" title="Danish" name="7" id="lang_select_7">Danish</a></li>
+                           <li><a href="newvideos.htm#" title="Deutsch" name="8" id="lang_select_8">Deutsch</a></li>
+                           <li><a href="newvideos.htm#" title="Fran&#231;ais" name="9" id="lang_select_9">Fran&#231;ais</a></li>
+                           <li><a href="newvideos.htm#" title="Georgian" name="10" id="lang_select_10">Georgian</a></li>
+                           <li><a href="newvideos.htm#" title="Italian" name="11" id="lang_select_11">Italian</a></li>
+                           <li><a href="newvideos.htm#" title="Lithuanian" name="12" id="lang_select_12">Lithuanian</a></li>
+                           <li><a href="newvideos.htm#" title="Nederlands" name="13" id="lang_select_13">Nederlands</a></li>
+                           <li><a href="newvideos.htm#" title="Polish" name="14" id="lang_select_14">Polish</a></li>
+                           <li><a href="newvideos.htm#" title="Portuguese" name="15" id="lang_select_15">Portuguese</a></li>
+                           <li><a href="newvideos.htm#" title="Rom&#226;n&#259;" name="16" id="lang_select_16">Rom&#226;n&#259;</a></li>
+                           <li><a href="newvideos.htm#" title="Russian" name="17" id="lang_select_17">Russian</a></li>
+                           <li><a href="newvideos.htm#" title="Serbian" name="18" id="lang_select_18">Serbian</a></li>
+                           <li><a href="newvideos.htm#" title="Slovak" name="19" id="lang_select_19">Slovak</a></li>
+                           <li><a href="newvideos.htm#" title="Spanish" name="20" id="lang_select_20">Spanish</a></li>
+                           <li><a href="newvideos.htm#" title="Swedish" name="21" id="lang_select_21">Swedish</a></li>
+                           <li><a href="newvideos.htm#" title="T&uuml;rk&ccedil;e" name="22" id="lang_select_22">T&uuml;rk&ccedil;e</a></li>
+                           <li><a href="newvideos.htm#" title="Hebrew" name="23" id="lang_select_23">Hebrew</a></li>
+                   </ul>
+        </div>
+</div>
+</footer>
+<div id="lights-overlay"></div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+<script src="templates/default/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.cookee.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.validate.min.js" type="text/javascript"></script>
+
+
+<script src="templates/default/js/jquery.maskedinput-1.3.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.ba-dotimeout.min.js" type="text/javascript"></script>
+
+<script src="js/melody.min.js" type="text/javascript"></script>
+<script src="templates/default/js/melody.min.js" type="text/javascript"></script>
+<script src="templates/default/js/lightbox.min.js" type="text/javascript"></script>
+
+
+    
+    <script type="text/javascript">
+    
+        $('#header-login-form').on('shown', function () {
+            $('.hocusfocus').focus();
+        });
+    
+    </script>
+    
+
+<script src="templates/default/js/waypoints.min.js" type="text/javascript"></script>
+<script src="templates/default/js/melody.social.min.js" type="text/javascript"></script> 
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37251223-1', 'itube.co.ke');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- Begin PHP Live! HTML Code -->
+<span id="phplive_btn_1392375244" onclick="phplive_launch_chat_0(0)" style="color: #0000FF; text-decoration: underline; cursor: pointer;"></span>
+<script type="text/JavaScript">
+(function() {
+	var phplive_e_1392375244 = document.createElement("script") ;
+	phplive_e_1392375244.type = "text/javascript" ;
+	phplive_e_1392375244.async = true ;
+	phplive_e_1392375244.src = "//helplive.itube.co.ke/js/phplive_v2.js.php?v=0|1392375244|0|" ;
+	document.getElementById("phplive_btn_1392375244").appendChild( phplive_e_1392375244 ) ;
+})();
+</script>
+<!-- End PHP Live! HTML Code -->
+
+
+
+
+<script>
+document.write('<scr'+'ipt type="text/javascript" src="http://pl.intag.co/ttj?id=2267276&size=216x36&cb=' +new Date().getTime()+'"></scr' + 'ipt>');
+</script>
+
+<script>
+document.write('<scr'+'ipt type="text/javascript" src="http://pl.intag.co/ttj?id=2267276&size=300x50&cb=' +new Date().getTime()+'"></scr' + 'ipt>');
+</script>
+
+<a href="https://s3.amazonaws.com/com.alexa.toolbar/atbp/ZBLbuf/download/index.htm"><img src="http://www.alexa.com/tbplatform/images/promotebuttons/blue/TB-banner3-2.jpg" alt="Get our toolbar!"></a>
+
+<a href="http://fidelity-media.com/?ref=97e2cd43"><img src="http://stats.fidelity-media.com/bundles/as3/images/rc/set2/320x50.gif" alt="Join Fidelity Media Advertising Network" /></a>
+</body>
+</html>

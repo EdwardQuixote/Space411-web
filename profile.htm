@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" dir="ltr" lang="en">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html dir="ltr" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1024,maximum-scale=1.0">
+<title>admin Profile page on iTUBE</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=edge,chrome=1">  
+<meta name="title" content="admin Profile page on iTUBE" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="shortcut icon" href="uploads/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="admin Profile page on iTUBE" href="rss.xml" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/bootstrap-responsive.min.css">
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/new-style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="templates/default/css/uniform.default.min.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=all" rel="stylesheet" type="text/css">
+<!--[if IE]>
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://itube.co.ke/templates/default/css/new-style-ie.css">
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<script type="text/javascript">
+ var MELODYURL = "http://itube.co.ke";
+ var MELODYURL2 = "http://itube.co.ke";
+ var TemplateP = "http://itube.co.ke/templates/default";
+ var _LOGGEDIN_ =  false ;
+</script>
+
+<script type="text/javascript">
+ var pm_lang = {
+	lights_off: "Lights off",
+	lights_on: "Lights on",
+	validate_name: "Please enter a name",
+	validate_username: "Please enter a username",
+	validate_pass: "Please provide a password",
+	validate_captcha: "Please enter the validation code",
+	validate_email: "Please enter a valid email address",
+	validate_agree: "Please accept our policy",
+	validate_name_long: "Your name must consist of at least 2 characters",
+	validate_username_long: "Your username must consist of at least 2 characters",
+	validate_pass_long: "Your password must be at least 5 characters long",
+	validate_confirm_pass_long: "Please enter the same password as above",
+	choose_category: "Please choose a category",
+ 	validate_select_file: "No file was selected/uploaded.",
+ 	validate_video_title: "Please enter a title for this video",
+	onpage_delete_favorite_confirm: "You are about to remove this video from your favorites list. Click 'Cancel' to stop, 'OK' to delete.",
+	please_wait: "Loading...",
+	// upload video page
+	swfupload_status_uploaded: "Uploaded",
+	swfupload_status_pending: "Continue with the rest of the form.",
+	swfupload_status_queued: "Queued",
+	swfupload_status_uploading: "Uploading...",
+	swfupload_file: "File",
+	swfupload_btn_select: "Select",
+	swfupload_btn_cancel: "Cancel",
+	swfupload_status_error: "Error",
+	swfupload_error_oversize: "Size of the selected file(s) is greater than allowed limit",
+	swfupload_friendly_maxsize: ""
+ }
+</script>
+
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<style type="text/css"></style>
+</head>
+<body>
+
+<header class="wide-header" id="overview">
+<div class="row-fluid fixed960">
+    <div class="span3">
+	  	  	<a href="index.htm" rel="home"><img src="uploads/custom-logo.png" alt="iTUBE" title="iTUBE" border="0" /></a>
+	     </div>
+   
+   <div class="span6 wide-header-pad">
+        <form action="search.htm" method="get" id="search" name="search" onsubmit="return validateSearch('true');">
+    <div class="controls">
+      <div class="input-append">
+        <input class="span10" id="appendedInputButton" size="16" name="keywords" type="text" placeholder="Search" x-webkit-speech="x-webkit-speech" onwebkitspeechchange="this.form.submit();" onkeyup="lookup(this.value);" onblur="fill();" autocomplete="off"><button class="btn" type="submit"><i class="icon-search"></i></button>
+      </div>
+      <div class="suggestionsBox" id="suggestions" style="display: none;">
+          <div class="suggestionList input-xlarge" id="autoSuggestionsList">
+          </div>
+      </div>
+    </div>
+    </form>
+       </div>
+
+    <div class="span3 hidden-phone">
+    <div id="user-pane" class="border-radius4">
+        <div class="user-data">
+        <span class="user-avatar">
+                <a href="login.htm"><img src="templates/default/img/pm-avatar.png" width="40" height="40" alt=""></a>
+        <span class="greet-links">
+        <div class="ellipsis"><strong>Welcome</strong></div>
+        <span class="avatar-img"><a class="primary ajax-modal" data-toggle="modal" data-backdrop="true" data-keyboard="true" href="profile.htm#header-login-form">Login</a> / <a href="register.htm">Register</a></span>
+        </span>
+        </div>
+                </span>
+    
+                <div class="modal hide" id="header-login-form" role="dialog" aria-labelledby="header-login-form-label"> <!-- login modal -->
+            <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 id="header-login-form-label">Login</h3>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <form class="form-horizontal" name="login_form" id="login-form" method="post" action="login.htm">
+  <fieldset>
+  <div class="control-group">
+    <label class="control-label" for="username">Username/Email</label>
+    <div class="controls"><input type="text" class="hocusfocus input-large" id="hocusfocus" name="username" value=""></div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="pass">Password</label>
+    <div class="controls"><input type="password" class="input-large" id="pass" name="pass" maxlength="32" autocomplete="off"></div>
+  </div>
+  <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+        <input type="checkbox" name="remember" value="1" > <small>Remember me</small>
+        </label>
+      </div>
+  </div>
+
+    <div class="">
+        <div class="controls">
+        <button type="submit" name="Login" value="Login" class="btn btn-blue" data-loading-text="Login">Login</button>
+        <span class="signup"><small><a href="login_2.htm">Forgot your password?</a></small></span>
+        </div>
+    </div>
+  </fieldset>
+</form>            </div>
+        </div>
+            </div>
+    
+	    </div>
+</div>
+</header>
+<nav class="wide-nav">
+    <div class="row-fluid fixed960">
+        <span class="span12">
+		<div class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse">
+                    <ul class="nav">
+                    
+                      <li><a href="index.htm" class="wide-nav-link">Home</a></li>
+                      <li class="dropdown">
+                        <a href="profile.htm#" class="dropdown-toggle wide-nav-link" data-toggle="dropdown">Category <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <ul id='ul_categories'>
+<li class=""><a href="category_2.htm" class="">Animals</a></li>
+<li class=""><a href="category_14.htm" class="">Art</a></li>
+<li class=""><a href="category.htm" class="">Auto-Motor</a></li>
+<li class=""><a href="category_3.htm" class="">Celeb</a></li>
+<li class=""><a href="category_5.htm" class="">College</a></li>
+<li class=""><a href="category_4.htm" class="">Funny</a></li>
+<li class=""><a href="category_6.htm" class="">Gaming</a></li>
+<li class=""><a href="category_7.htm" class="">Lifestyle</a></li>
+<li class=""><a href="category_8.htm" class="">Movies</a></li>
+<li class=""><a href="category_9.htm" class="">Music</a></li>
+<li class=""><a href="category_10.htm" class="">News</a></li>
+<li class=""><a href="category_11.htm" class="">Sports</a></li>
+<li class=""><a href="category_13.htm" class="">TV</a></li>
+<li class=""><a href="category_12.htm" class="">Tech</a></li>
+<li class=""><a href="category_17.htm" class="">Travel</a></li>
+<li class=""><a href="category_15.htm" class="">Webcam</a></li>
+<li class=""><a href="category_16.htm" class="">Live</a></li>
+
+</ul>
+                        </ul>
+                      </li>
+                      
+					                        <li class="dropdown">
+                        <a href="profile.htm#" class="dropdown-toggle wide-nav-link" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+						<ul id='ul_categories'>
+<li><a href="article.htm">Latest articles</a></li><li ><a href="article_2.htm">Most popular</a></li><li class=""><a href="article_3.htm" class="">This is Kenya</a></li>
+
+</ul>
+                        </ul>
+                      </li>
+					                        <li><a href="topvideos.htm" class="wide-nav-link">Top videos</a></li>
+                      <li><a href="newvideos.htm" class="wide-nav-link">New videos</a></li>
+                      <li><a href="http://itube.co.ke/randomizer.php" rel="nofollow" class="wide-nav-link">Random video</a></li>
+                      		
+                      <li><a href="contact_us.htm" class="wide-nav-link">Contact us</a></li>
+                      		
+                                          </ul>
+                    
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div><!-- /navbar -->
+       </span>
+    </div>
+</nav>
+<a id="top"></a>
+<div class="pm-ad-zone" align="center"><!-- BEGIN JS TAG - Itube.co.ke 728x90 < - DO NOT MODIFY -->
+<SCRIPT SRC="http://ads.fidelity-media.com/ttj?id=1160152&size=728x90&promo_sizes=300x50,320x50,468x60,216x36&promo_alignment=center" TYPE="text/javascript"></SCRIPT>
+<!-- END TAG -->
+</div>
+ 
+<div id="wrapper" class="profile-page">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+		<div id="primary">
+		<div class="span3">
+        <div class="profile-avatar">
+        <span class="img_polaroid"><img src="http://itube.co.ke/uploads/avatars/avatar574-1.png" border="0" alt="" class="img-polaroid" width="180" height="180"></span>
+		        </div>
+        
+        <div id="profile-tabs">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                                 				 				 					<li class="active"><a href="profile.htm#pm-pro-about" data-toggle="tab">About me</a></li>
+					                                <li><a href="profile.htm#pm-pro-fav" data-toggle="tab">My favorites</a></li>
+                <li><a href="profile.htm#pm-pro-own" data-toggle="tab">My submissions</a></li>
+									<li><a href="profile.htm#pm-pro-followers" data-toggle="tab">Followers</a></li>
+					<li><a href="profile.htm#pm-pro-following" data-toggle="tab">Following</a></li>
+				              </ul>
+            </div> <!-- /tabbable -->
+        </div>
+
+        </div>
+        <div class="span9 vertical-menu">
+        	<div class="row-fluid">
+            	<div class="span7">
+                	<h2 class="username">Admin                    					</h2>
+                    
+                    <ul class="pm-pro-counts">
+                        <li><span class="count-number">470</span> <span class="count-what"><a href="profile.htm#pm-pro-own" data-toggle="tab">Videos</a></span></li>
+						                        <li><span class="count-number">0</span> <span class="count-what"><a href="profile.htm#pm-pro-followers" data-toggle="tab">Followers</a></span></li>
+						<li class="last-li"><span class="count-number">31</span> <span class="count-what"><a href="profile.htm#pm-pro-following" data-toggle="tab">Following</a></span></li>
+						                    </ul>
+                </div>
+            	<div class="span5">
+                    <div align="right">
+                                            </div>
+                </div>
+            </div>
+
+        	<div class="clearfix"></div>
+		
+		
+
+
+<div class="tab-content">
+
+						<div class="tab-pane fade in active" id="pm-pro-about">
+			              <ul class="pm-pro-data">
+                  <li><i class="icon-map-marker"></i> USA</li>
+                  <li><i class="icon-user"></i> 3 Months ago</li>
+                  <li><i class="icon-off"></i> Offline</li>
+                  <li><i class="icon-eye-open"></i> 1 Week ago</li>
+              </ul>
+            <h4>About me</h4>
+            			<p>This user hasn't posted anything yet.</p>
+            	  		
+			<h4>Social Links</h4>
+            <ul class="pm-pro-social">
+			 
+				<li><a href="itube_co_default.html" target="_blank"><i class="pm-vc-sprite ico_social_site"></i> http://itube.co.ke</a></li>
+			 
+							<li><a href="https://www.facebook.com/itube.co.ke" target="_blank"><i class="pm-vc-sprite ico_social_fb"></i> https://www.facebook.com/itube.co.ke</a></li>
+										<li><a href="http://www.twitter.com/itubeKenya" target="_blank"><i class="pm-vc-sprite ico_social_twitter"></i> http://www.twitter.com/itubeKenya</a></li>
+										<li><i class="pm-vc-sprite ico_social_lastfm ico-social-none"></i> n/a</li>
+									</ul>
+
+            </div>
+            <div class="tab-pane fade" id="pm-pro-fav">
+            <h4>My favorites</h4>
+
+                            <ul class="pm-ul-browse-videos thumbnails">
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=0c32fafc2" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/BPWgy.jpg" alt="Lamborghini Press Conference at 2013 Geneva Motorshow" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=0c32fafc2" class="pm-title-link" title="Lamborghini Press Conference at 2013 Geneva Motorshow">Lamborghini Press Conference at 2013 Geneva Motorshow</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-24T02:41:40-0600" title="Monday, February 24, 2014 2:41 AM">1 month ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>1,929 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">General views and soundbites from Lamborghini Press Conference at 2013 Geneva Motorshow where the new Lamborghini Veneno has been presented.</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="watch_21.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/Ck59W.jpg" alt="Carrie Viral Telekinetic Coffee Shop Surprise" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="watch_21.htm" class="pm-title-link" title="Carrie Viral Telekinetic Coffee Shop Surprise">Carrie Viral Telekinetic Coffee Shop Surprise</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-01-28T06:33:44-0600" title="Tuesday, January 28, 2014 6:33 AM">2 months ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>3,687 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">Carrie Viral Telekinetic Coffee Shop Surprise &lt;br /&gt;more on http://www.itsartmag.com</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=0d44aa609" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DwPD2.jpg" alt="The Ultimate Bad Acting Compilation" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=0d44aa609" class="pm-title-link" title="The Ultimate Bad Acting Compilation">The Ultimate Bad Acting Compilation</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-07T04:13:51-0600" title="Friday, March 7, 2014 4:13 AM">1 month ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>931 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">Some actors are so bad that they're actually better than those so-called "good actors."</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=1c9d3d561" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/Ar9mt.jpg" alt="Magic System - Ambiance à l'africaine" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=1c9d3d561" class="pm-title-link" title="Magic System - Ambiance à l'africaine">Magic System - Ambiance à l'africaine</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-13T01:37:20-0600" title="Thursday, February 13, 2014 1:37 AM">2 months ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>1,382 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">Magic System - Ambiance &agrave; l'africaine (C) 2011 Parlophone Music France</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=593f56d65" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/CWzDk.jpg" alt="Martin Garrix - Animals OFFICIAL" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=593f56d65" class="pm-title-link" title="Martin Garrix - Animals OFFICIAL">Martin Garrix - Animals OFFICIAL</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-01-18T03:21:05-0600" title="Saturday, January 18, 2014 3:21 AM">3 months ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>653 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">Biography Martin Garritsen (born 14 May 1996), known by his stage name Martin Garrix, is a Dutch DJ/producer signed to Spinnin' Records. He is best known for the track "Animals", which was a Top 10 hit in more than 10 countries; the song has also peaked t</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=daa1acc8b" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DbewY.jpg" alt="B.o.B - John Doe ft. Priscilla [Official Video]" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=daa1acc8b" class="pm-title-link" title="B.o.B - John Doe ft. Priscilla [Official Video]">B.o.B - John Doe ft. Priscilla [Official Video]</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-01-25T03:30:43-0600" title="Saturday, January 25, 2014 3:30 AM">2 months ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>938 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">B.o.B - John Doe ft. Priscilla [Official Video]</p>
+                                            </div>
+                  </li>
+                                  <li>
+                    <div class="pm-li-video">
+                        <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                        <span class="pm-video-li-thumb-info">
+                                                                            <span class="label label-pop">Popular</span>                        </span>
+                        <a href="http://itube.co.ke/watch.php?vid=f4e1a1150" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/ASvzn.jpg" alt="Avicii 'Vegas Pool Party'" width="145"><span class="vertical-align"></span></span></a>
+                        </span>
+                        
+                        <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=f4e1a1150" class="pm-title-link" title="Avicii 'Vegas Pool Party'">Avicii 'Vegas Pool Party'</a></h3>
+                        <div class="pm-video-attr">
+                            <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                            <span class="pm-video-attr-since"><small>Added <time datetime="2014-02-13T01:55:21-0600" title="Thursday, February 13, 2014 1:55 AM">2 months ago</time></small></span>
+                            <span class="pm-video-attr-numbers"><small>1,381 Views /  Likes</small></span>
+                        </div>
+                        <p class="pm-video-attr-desc">http://www.a3network.com Avicii 'Vegas Pool Party'. Marquee Day Club Las Vegas. A 5th &amp; Ocean Production. Avicii the 20 year old producer has been VERY busy in the studio. With his first single (Sound of Now) and follow up EP (Muja/Record Breaker) off</p>
+                                            </div>
+                  </li>
+                                </ul>
+        	  <!-- /$favorite -->
+            </div>
+            <div class="tab-pane fade" id="pm-pro-own">
+            <h4>Submitted by Admin</h4>
+
+            <ul class="pm-ul-browse-videos thumbnails">
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_9.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D43pv.jpg" alt="Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_9.htm" class="pm-title-link" title="Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About">Exclusive Episode of Parked: Explaining What St. Patrick's Day is Really About</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:45:29-0500" title="Wednesday, March 19, 2014 4:45 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,728 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">Dressed in shades of green St. Patrick's Day costumes Tim (Kirby Morrow), Jesse (David Lewis), Davinder (Sean Amsing) and Josh (Matty Granger) share nips of green beer and drams of concealed whiskey at their local Family Drop-in Centre. Here, they share a</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="http://itube.co.ke/watch.php?vid=088b88672" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D4IL3.jpg" alt="BuzzFeed Has Just Hired New Interns: The Muppets!" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=088b88672" class="pm-title-link" title="BuzzFeed Has Just Hired New Interns: The Muppets!">BuzzFeed Has Just Hired New Interns: The Muppets!</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:38:18-0500" title="Wednesday, March 19, 2014 4:38 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,776 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">In case you were wondering, the Muppets do not make good interns.</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_3.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/ECjbM.jpg" alt="The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_3.htm" class="pm-title-link" title="The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014">The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:05:13-0500" title="Tuesday, April 8, 2014 7:05 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,415 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">The Amazing Spider-Man 2- Spidey's Epic Free Fall - Movie 2014 2014 Movies http://teaser-trailer.com/movies-2014.html</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_11.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EEw3k.jpg" alt="Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_11.htm" class="pm-title-link" title="Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts">Gwyneth Paltrow Says Working Moms Have it Easier, Twitter Reacts</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-04T04:13:39-0500" title="Friday, April 4, 2014 4:13 AM">2 weeks ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>10.5k Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">Gwyneth Paltrow ignited a firestorm after telling E! News that she thinks working as a movie star as a mom is hard, whereas moms who work regular office jobs have it easier. As John Basedow (@JohnBasedow) reports, this comment did not sit well on Twitter.</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_12.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Share the latest trailer of the upcoming movie The Muppets: Most Wanted" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_12.htm" class="pm-title-link" title="Share the latest trailer of the upcoming movie The Muppets: Most Wanted">Share the latest trailer of the upcoming movie The Muppets: Most Wanted</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:40:09-0500" title="Wednesday, March 19, 2014 4:40 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>1,918 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">http://www.myfilm.gr/13268 - https://www.facebook.com/myfilm.gr In theaters: March 21th, 2014 Copyright &copy; 2014 Walt Disney Studios Motion Pictures Muppets Most Wanted - trailer #2 [HD] (2014) &tau;&omicron;&upsilon; &Tau;&zeta;έ&iota;&mu;&sigmaf; &Mu</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/EBGNJ.jpg" alt="How To Train Your Dragon 2 - Itchy Armpit" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch.htm" class="pm-title-link" title="How To Train Your Dragon 2 - Itchy Armpit">How To Train Your Dragon 2 - Itchy Armpit</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:08:02-0500" title="Tuesday, April 8, 2014 7:08 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,515 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">How To Train Your Dragon 2 - Itchy Armpit</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_10.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/DxaPt.jpg" alt="The Mashup Getdown Brings American Hustle to Rapping Hustlers" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_10.htm" class="pm-title-link" title="The Mashup Getdown Brings American Hustle to Rapping Hustlers">The Mashup Getdown Brings American Hustle to Rapping Hustlers</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:42:05-0500" title="Wednesday, March 19, 2014 4:42 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,707 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">"American Hustlers" is the fourth installment of "The Mashup Getdown" in which the "American Hustle" movie meets rapping hustlers. American Hustle is a 2013 American crime comedy-drama film directed by David O. Russell, loosely based on the FBI ABSCAM ope</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_8.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D_0xA.jpg" alt="Schwarzenegger and Fallon Star in Hilarious QVC Skit" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_8.htm" class="pm-title-link" title="Schwarzenegger and Fallon Star in Hilarious QVC Skit">Schwarzenegger and Fallon Star in Hilarious QVC Skit</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T06:57:28-0500" title="Tuesday, April 8, 2014 6:57 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,475 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">As part of 'The Tonight Show Starring Jimmy Fallon', the duo took part in a QVC skit, which showcased the men donning blue aprons with Fallon being the lucky one who got to wear a very realistic blonde wig. What a pair Jimmy Fallon and Arnold Schwarzenegg</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_4.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D68i4.jpg" alt=""Shifter" - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_4.htm" class="pm-title-link" title=""Shifter" - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD">"Shifter" - Live Action Sci-fi Short - CGI by The Hallivis Brothers HD</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:03:39-0500" title="Tuesday, April 8, 2014 7:03 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,525 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">www.hallivisbrothers.com contact:info@hallivisbrothers.com Like us on Facebook: https://www.facebook.com/SHIFTERFILM Los Angeles - 2023. James Striker is on the verge of bringing down the oppressive government that has crushed all freedom in the United St</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_5.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EDy5p.jpg" alt="Petit Prague" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_5.htm" class="pm-title-link" title="Petit Prague">Petit Prague</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:01:48-0500" title="Tuesday, April 8, 2014 7:01 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,435 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">Prague, the Czech capital, is also known as the "Golden City". Take a boat ride on the Vltava and travel through this amazing city and see all the major attractions from incredible vantage points. The busy Charles Bridge has never looked more adorable. A </p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="http://itube.co.ke/watch.php?vid=76178ee58" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="templates/default/img/no-thumbnail.jpg" alt="Geo Da Silva & Jack Mazzoni: the Latest Hit by Blanco y Negro Music" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=76178ee58" class="pm-title-link" title="Geo Da Silva & Jack Mazzoni: the Latest Hit by Blanco y Negro Music">Geo Da Silva & Jack Mazzoni: the Latest Hit by Blanco y Negro Music</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:32:50-0500" title="Wednesday, March 19, 2014 4:32 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,829 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">Buy It On/ C&oacute;mpralo: iTunes: Coming Soon! Google Play: Coming Soon! Beatport: Coming Soon! Listen/ Esc&uacute;chalo: Spotify: Coming Soon! Deezer: Coming Soon! Sigue todas nuestras novedades/ Discover new videos: http://smarturl.it/BYNSub Disfruta </p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_13.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/DycSf.jpg" alt="Share the latest trailer of the upcoming movie The Muppets: Most Wanted" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_13.htm" class="pm-title-link" title="Share the latest trailer of the upcoming movie The Muppets: Most Wanted">Share the latest trailer of the upcoming movie The Muppets: Most Wanted</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:40:09-0500" title="Wednesday, March 19, 2014 4:40 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,732 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">http://www.myfilm.gr/13268 - https://www.facebook.com/myfilm.gr In theaters: March 21th, 2014 Copyright &copy; 2014 Walt Disney Studios Motion Pictures Muppets Most Wanted - trailer #2 [HD] (2014) &tau;&omicron;&upsilon; &Tau;&zeta;έ&iota;&mu;&sigmaf; &Mu</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="http://itube.co.ke/watch.php?vid=8ad6bc253" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s1.dmcdn.net/D6lPt.jpg" alt="This Diver Puts Sharks in a Trance" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=8ad6bc253" class="pm-title-link" title="This Diver Puts Sharks in a Trance">This Diver Puts Sharks in a Trance</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:34:15-0500" title="Wednesday, March 19, 2014 4:34 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,744 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">A diver puts a Caribbean reef shark into a trance using just his hands. British underwater photographer Simon Enderby captured the amazing moment during a routine feeding dive off the coast of the Bahamas. One diver can be seen reaching out to touch the s</p>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_2.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EDsvO.jpg" alt="Dawn of the Planet of the Apes -  TV Spot" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_2.htm" class="pm-title-link" title="Dawn of the Planet of the Apes -  TV Spot">Dawn of the Planet of the Apes -  TV Spot</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T07:09:29-0500" title="Tuesday, April 8, 2014 7:09 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,437 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">A growing nation of genetically evolved apes led by Caesar is threatened by a band of human survivors of the devastating virus unleashed a decade earlier. They reach a fragile peace, but it proves short-lived, as both sides are brought to the brink of a w</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="watch_6.htm" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/EAXsu.jpg" alt="The Ultimate Boat Fails Compilation" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="watch_6.htm" class="pm-title-link" title="The Ultimate Boat Fails Compilation">The Ultimate Boat Fails Compilation</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-04-08T06:59:58-0500" title="Tuesday, April 8, 2014 6:59 AM">1 week ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,463 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">The Ultimate Boat Fails Compilation</p>
+                                        <span class="pm-video-li-info">
+                        <span class="label label-featured">Featured</span>
+                    </span>
+                                    </div>
+              </li>
+                          <li>
+                <div class="pm-li-video">
+                    <span class="pm-video-thumb pm-thumb-145 pm-thumb border-radius2">
+                    <span class="pm-video-li-thumb-info">
+                                                                <span class="label label-pop">Popular</span>                    </span>
+                    <a href="http://itube.co.ke/watch.php?vid=c65a7d79a" class="pm-thumb-fix pm-thumb-145"><span class="pm-thumb-fix-clip"><img src="http://s2.dmcdn.net/D4qqC.jpg" alt="Share the Best Redhead Fails the Internet Has to Offer" width="145"><span class="vertical-align"></span></span></a>
+                    </span>
+                    
+                    <h3 dir="ltr"><a href="http://itube.co.ke/watch.php?vid=c65a7d79a" class="pm-title-link" title="Share the Best Redhead Fails the Internet Has to Offer">Share the Best Redhead Fails the Internet Has to Offer</a></h3>
+                    <div class="pm-video-attr">
+                        <span class="pm-video-attr-author">by <a href="profile.htm">admin</a></span>
+                        <span class="pm-video-attr-since"><small>Added <time datetime="2014-03-19T04:36:27-0500" title="Wednesday, March 19, 2014 4:36 AM">1 month ago</time></small></span>
+                        <span class="pm-video-attr-numbers"><small>2,783 Views /  Likes</small></span>
+                    </div>
+                    <p class="pm-video-attr-desc">In honor of St. Patrick's Day this coming Monday, we proudly present the best Redhead fails the internet has to offer.</p>
+                                    </div>
+              </li>
+                        </ul>
+            
+                        <a href="http://itube.co.ke/search.php?keywords=admin&amp;btn=Search&amp;t=user" class="btn btn-small" title="Watch all &raquo;">Watch all &raquo;</a>
+                        </div>
+						<div class="tab-pane fade" id="pm-pro-followers">
+			<h4>Followers</h4>
+				<div id="pm-pro-followers-content"></div>
+			</div>
+			
+			<div class="tab-pane fade" id="pm-pro-following">
+			<h4>Following</h4>
+				<div id="pm-pro-following-content"></div>
+			</div>
+
+						
+									
+          </div><!-- /tab-content -->
+          
+        </div>
+
+		<input type="hidden" name="profile_user_id" value="1" />
+		</div><!-- #primary -->
+        </div><!-- #content -->
+      </div><!-- .row-fluid -->
+    </div><!-- .container-fluid -->
+<a id="back-top" class="hidden-phone hidden-tablet" title="Go Up">
+    <i class="icon-chevron-up"></i>
+    <span></span>
+</a>
+</div><!-- end wrapper -->
+
+<div class="row-fluid fixed960">
+    <div class="row-fluid">
+        <a href="rss.xml" title="admin Profile page on iTUBE RSS" class="pm-rss-link"><i class="pm-vc-sprite ico_rss"></i> RSS</a>
+        </div>
+</div>
+
+<div class="pm-ad-zone" align="center"><!-- BEGIN JS TAG - Itube.co.ke 728x90 < - DO NOT MODIFY -->
+<SCRIPT SRC="http://ads.fidelity-media.com/ttj?id=1160152&size=728x90&promo_sizes=300x50,320x50,468x60,216x36&promo_alignment=center" TYPE="text/javascript"></SCRIPT>
+<!-- END TAG -->
+</div>
+    
+<footer>
+<div class="row-fluid fixed960">
+	<div class="span8">
+    <ul>
+    			<li><a href="index.htm">Home</a></li>
+        <li><a href="contact_us.htm">Contact us</a></li>
+        <li><a href="register.htm">Register</a></li>                                      </ul>
+    <p>
+    iTUBE.<br />    &copy; 2014 iTUBE. All rights reserved
+    </p>
+    </div>
+    <div class="span3">
+	 
+    </div>
+    <div class="span1">
+         <ul id="lang_selector">
+      <div class="btn-group dropup lang-selector hidden-phone" id="lang-selector">
+      <a class="btn btn-link dropdown-toggle" data-toggle="dropdown" href="profile.htm#"><img src="lang/flags/us.png" width="16" height="10" alt="English" title="English" align="texttop"> <span class="hide">English</span> <span class="caret"></span></a>
+
+      <ul class="dropdown-menu border-radius0 pullleft lang_submenu">
+                                 <li><a href="profile.htm#" title="Albanian" name="2" id="lang_select_2">Albanian</a></li>
+                           <li><a href="profile.htm#" title="Arabic" name="3" id="lang_select_3">Arabic</a></li>
+                           <li><a href="profile.htm#" title="Brazilian" name="4" id="lang_select_4">Brazilian</a></li>
+                           <li><a href="profile.htm#" title="Bulgarian" name="5" id="lang_select_5">Bulgarian</a></li>
+                           <li><a href="profile.htm#" title="Croatian" name="6" id="lang_select_6">Croatian</a></li>
+                           <li><a href="profile.htm#" title="Danish" name="7" id="lang_select_7">Danish</a></li>
+                           <li><a href="profile.htm#" title="Deutsch" name="8" id="lang_select_8">Deutsch</a></li>
+                           <li><a href="profile.htm#" title="Fran&#231;ais" name="9" id="lang_select_9">Fran&#231;ais</a></li>
+                           <li><a href="profile.htm#" title="Georgian" name="10" id="lang_select_10">Georgian</a></li>
+                           <li><a href="profile.htm#" title="Italian" name="11" id="lang_select_11">Italian</a></li>
+                           <li><a href="profile.htm#" title="Lithuanian" name="12" id="lang_select_12">Lithuanian</a></li>
+                           <li><a href="profile.htm#" title="Nederlands" name="13" id="lang_select_13">Nederlands</a></li>
+                           <li><a href="profile.htm#" title="Polish" name="14" id="lang_select_14">Polish</a></li>
+                           <li><a href="profile.htm#" title="Portuguese" name="15" id="lang_select_15">Portuguese</a></li>
+                           <li><a href="profile.htm#" title="Rom&#226;n&#259;" name="16" id="lang_select_16">Rom&#226;n&#259;</a></li>
+                           <li><a href="profile.htm#" title="Russian" name="17" id="lang_select_17">Russian</a></li>
+                           <li><a href="profile.htm#" title="Serbian" name="18" id="lang_select_18">Serbian</a></li>
+                           <li><a href="profile.htm#" title="Slovak" name="19" id="lang_select_19">Slovak</a></li>
+                           <li><a href="profile.htm#" title="Spanish" name="20" id="lang_select_20">Spanish</a></li>
+                           <li><a href="profile.htm#" title="Swedish" name="21" id="lang_select_21">Swedish</a></li>
+                           <li><a href="profile.htm#" title="T&uuml;rk&ccedil;e" name="22" id="lang_select_22">T&uuml;rk&ccedil;e</a></li>
+                           <li><a href="profile.htm#" title="Hebrew" name="23" id="lang_select_23">Hebrew</a></li>
+                   </ul>
+        </div>
+</div>
+</footer>
+<div id="lights-overlay"></div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+<script src="templates/default/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.cookee.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.validate.min.js" type="text/javascript"></script>
+
+
+<script src="templates/default/js/jquery.maskedinput-1.3.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="templates/default/js/jquery.ba-dotimeout.min.js" type="text/javascript"></script>
+
+<script src="js/melody.min.js" type="text/javascript"></script>
+<script src="templates/default/js/melody.min.js" type="text/javascript"></script>
+<script src="templates/default/js/lightbox.min.js" type="text/javascript"></script>
+
+
+    
+    <script type="text/javascript">
+    
+        $('#header-login-form').on('shown', function () {
+            $('.hocusfocus').focus();
+        });
+    
+    </script>
+    
+
+<script src="templates/default/js/waypoints.min.js" type="text/javascript"></script>
+<script src="templates/default/js/melody.social.min.js" type="text/javascript"></script> 
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37251223-1', 'itube.co.ke');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- Begin PHP Live! HTML Code -->
+<span id="phplive_btn_1392375244" onclick="phplive_launch_chat_0(0)" style="color: #0000FF; text-decoration: underline; cursor: pointer;"></span>
+<script type="text/JavaScript">
+(function() {
+	var phplive_e_1392375244 = document.createElement("script") ;
+	phplive_e_1392375244.type = "text/javascript" ;
+	phplive_e_1392375244.async = true ;
+	phplive_e_1392375244.src = "//helplive.itube.co.ke/js/phplive_v2.js.php?v=0|1392375244|0|" ;
+	document.getElementById("phplive_btn_1392375244").appendChild( phplive_e_1392375244 ) ;
+})();
+</script>
+<!-- End PHP Live! HTML Code -->
+
+
+
+
+<script>
+document.write('<scr'+'ipt type="text/javascript" src="http://pl.intag.co/ttj?id=2267276&size=216x36&cb=' +new Date().getTime()+'"></scr' + 'ipt>');
+</script>
+
+<script>
+document.write('<scr'+'ipt type="text/javascript" src="http://pl.intag.co/ttj?id=2267276&size=300x50&cb=' +new Date().getTime()+'"></scr' + 'ipt>');
+</script>
+
+<a href="https://s3.amazonaws.com/com.alexa.toolbar/atbp/ZBLbuf/download/index.htm"><img src="http://www.alexa.com/tbplatform/images/promotebuttons/blue/TB-banner3-2.jpg" alt="Get our toolbar!"></a>
+
+<a href="http://fidelity-media.com/?ref=97e2cd43"><img src="http://stats.fidelity-media.com/bundles/as3/images/rc/set2/320x50.gif" alt="Join Fidelity Media Advertising Network" /></a>
+</body>
+</html>

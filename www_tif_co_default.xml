@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>TIF</title>
+	<atom:link href="http://www.tif.co.ke/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>http://www.tif.co.ke</link>
+	<description>The Identical Family</description>
+	<lastBuildDate>Wed, 06 Nov 2013 05:26:58 +0000</lastBuildDate>
+	<language>en-US</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.7.3</generator>
+	<item>
+		<title>Twin Song!!</title>
+		<link>http://www.tif.co.ke/?p=427</link>
+		<comments>http://www.tif.co.ke/?p=427#comments</comments>
+		<pubDate>Mon, 04 Nov 2013 19:52:12 +0000</pubDate>
+		<dc:creator><![CDATA[kipacha]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+
+		<guid isPermaLink="false">http://www.tif.co.ke/?p=427</guid>
+		<description><![CDATA[&#160;]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.tif.co.ke/wp-content/uploads/2013/06/tbroz-at-Kenya-live-2.jpg"><img class="alignnone size-full wp-image-401" alt="tbroz at Kenya live 2" src="http://www.tif.co.ke/wp-content/uploads/2013/06/tbroz-at-Kenya-live-2.jpg" width="1000" height="667" /></a></p>
+<!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+<audio class="wp-audio-shortcode" id="audio-427-1" preload="none" style="width: 100%" controls="controls"><source type="audio/x-ms-wma" src="http://www.tif.co.ke/wp-content/uploads/2013/11/01-Twins-Song.wma" /><a href="http://www.tif.co.ke/wp-content/uploads/2013/11/01-Twins-Song.wma">http://www.tif.co.ke/wp-content/uploads/2013/11/01-Twins-Song.wma</a></audio>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.tif.co.ke/?feed=rss2&#038;p=427</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+<enclosure url="http://www.tif.co.ke/wp-content/uploads/2013/11/01-Twins-Song.wma" length="3474994" type="audio/x-ms-wma" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,198 @@
+    /*
+    Theme Name: NicanianII
+    Theme URI: http://templaza.com/
+    Author: Templaza
+    Author URI: http://templaza.com/
+    Description: nicanianii is a powerful responsive design for everyone who wants to store and share to public all beautiful images and videos. A perfect integrating system, very flexible for user when easily to be used on Ipad and Iphone.
+    Version: 1.1
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: light, gray, white, one-column, two-columns, three-columns, four-columns, right-sidebar, flexible-width, custom-menu, featured-images, full-width-template, theme-options, nicanianii
+    Text Domain: nicanianii
+    */
+
+/* COMMON STYLE
+--------------------------------------------------------- */
+
+
+
+
+@font-face {
+  font-family: 'RokkittRegular';
+  src: url('fonts/Rokkitt-webfont.eot');
+  src: url('fonts/Rokkitt-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/Rokkitt-webfont.woff') format('woff'),
+  url('fonts/Rokkitt-webfont.ttf') format('truetype'),
+  url('fonts/Rokkitt-webfont.svg#RokkittRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('fonts/BebasNeue-webfont.eot');
+  src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/BebasNeue-webfont.woff') format('woff'),
+  url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+  url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url('fonts/League_Gothic-webfont.eot');
+  src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/League_Gothic-webfont.woff') format('woff'),
+  url('fonts/League_Gothic-webfont.ttf') format('truetype'),
+  url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+/*body {*/
+
+  /*font-family: 'OpenSansRegular',tahoma,arial;*/
+
+/*}*/
+
+/*body#bd { background: #fff url('images/skelatal_weave.png') repeat; color: #717171; margin: 0; }*/
+
+
+
+
+#ja-mainnav .navbar .nav > li.menu-item  > ul.sub-menu > li {
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    width: 180px;
+    margin-bottom: 1px;
+}
+/*body #ja-mainbody .ja-sidebar-1{*/
+    /*border-right: none;*/
+/*}*/
+body .hidden {
+    display: none;
+}
+.tz_image_hover{
+    opacity: 0;
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: opacity 0.35s ease-in-out;
+    -moz-transition: opacity 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out;
+}
+
+.tz_image_hover:hover{
+    opacity: 1;
+    margin: 0;
+}
+#infscr-loading {
+    position: absolute;
+    padding: 0;
+    left: 35%;
+    bottom:0;
+    background:none;
+}
+
+#infscr-loading div,#infscr-loading img{
+    display:inline-block;
+}
+
+body .ja-mainbody{ background:none;}
+body > .container{
+    width:100%;
+}
+
+hr.line-hr{
+
+    text-align: left;
+}
+.TzItemsRow {
+    position: relative;
+}
+.page .ja-mainbody .row{
+	border-right: none !important;
+}
+/* == WordPress WYSIWYG Editor Styles == */
+
+.entry-content img {
+	margin: 0 0 1.5em 0;
+	}
+.alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+	}
+.alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+	float: right;
+	}
+.aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+	}
+.alignnone, img.alignnone {
+	/* not sure about this one */
+	}
+.wp-caption {
+	margin-bottom: 1.5em;
+	text-align: center;
+	padding-top: 5px;
+	}
+.wp-caption img {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	}
+.wp-caption p.wp-caption-text {
+	line-height: 1.5;
+	font-size: 10px;
+	margin: 0;
+	}
+.wp-smiley {
+	margin: 0 !important;
+	max-height: 1em;
+	}
+blockquote.left {
+	margin-right: 20px;
+	text-align: right;
+	margin-left: 0;
+	width: 33%;
+	float: left;
+	}
+blockquote.right {
+	margin-left: 20px;
+	text-align: left;
+	margin-right: 0;
+	width: 33%;
+	float: right;
+	}
+.gallery dl {}
+.gallery dt {}
+.gallery dd {}
+.gallery dl a {}
+.gallery dl img {}
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+.sticky{}
+.bypostauthor{}
+
+.post-id {}
+.post {}
+.page {}
+.attachment {}
+.hentry {}
+.category-misc {}
+.category-example {}
+.tag-news {}
+.tag-wordpress {}
+.tag-markup {}

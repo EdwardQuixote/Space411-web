@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>kipacha</title>
+	<atom:link href="http://kipacha.co.ke/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>http://kipacha.co.ke</link>
+	<description>kipacha</description>
+	<lastBuildDate>Mon, 07 Apr 2014 09:38:43 +0000</lastBuildDate>
+	<language>en-US</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.8.3</generator>
+	<item>
+		<title>Hello world!</title>
+		<link>http://kipacha.co.ke/?p=1</link>
+		<comments>http://kipacha.co.ke/?p=1#comments</comments>
+		<pubDate>Thu, 20 Feb 2014 08:55:13 +0000</pubDate>
+		<dc:creator><![CDATA[kipacha]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://kipacha.co.ke/?p=1</guid>
+		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!]]></description>
+				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=1</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Hello world!</title>
+		<link>http://kipacha.co.ke/?p=114</link>
+		<comments>http://kipacha.co.ke/?p=114#comments</comments>
+		<pubDate>Sat, 01 Feb 2014 13:15:19 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.thethemelab.com/FlatOneWP/?p=1</guid>
+		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!]]></description>
+				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=114</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Another Post with Everything In It</title>
+		<link>http://kipacha.co.ke/?p=146</link>
+		<comments>http://kipacha.co.ke/?p=146#comments</comments>
+		<pubDate>Wed, 17 Sep 2008 22:10:52 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Child Category I]]></category>
+		<category><![CDATA[Parent Category I]]></category>
+		<category><![CDATA[Parent Category II]]></category>
+		<category><![CDATA[tag2]]></category>
+		<category><![CDATA[tag5]]></category>
+		<category><![CDATA[tag6]]></category>
+
+		<guid isPermaLink="false">http://dev.wpcoder.com/dan/wordpress/?p=53</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, convallis quis, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat. Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img class="alignright" src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" align="right" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, <a href="#">convallis quis</a>, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat. <span id="more-146"></span></p>
+<blockquote><p>Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros at neque pretium sagittis. Sed sodales lorem a ipsum suscipit gravida. Ut fringilla placerat arcu. Phasellus imperdiet. Mauris ac justo et turpis pharetra vulputate.</p></blockquote>
+<p><cite><a href="#">Quote Source</a></cite></p>
+<h1>Level 1 Heading</h1>
+<h2>Level 2 Heading</h2>
+<h3>Level 3 Heading</h3>
+<h4>Level 4 Heading</h4>
+<h5>Level 5 Heading</h5>
+<h6>Level 6 Heading</h6>
+<h3>An Unordered List</h3>
+<ul>
+<li>Vestibulum in mauris semper tortor interdum ultrices.</li>
+<li>Sed vel lorem et justo laoreet bibendum. Donec dictum.</li>
+<li>Etiam massa libero, lacinia at, commodo in, tincidunt a, purus.</li>
+<li>Praesent volutpat eros quis enim blandit tincidunt.</li>
+<li>Aenean eu libero nec lectus ultricies laoreet. Donec rutrum, nisi vel egestas ultrices, ipsum urna sagittis libero, vitae vestibulum dui dolor vel velit.</li>
+</ul>
+<h3>Image with no alignment</h3>
+<p><img src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" /></p>
+<p><img class="alignleft" src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" align="left" />Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. Fusce erat.</p>
+<h3>An Ordered List</h3>
+<ol>
+<li>Vestibulum in mauris semper tortor interdum ultrices.</li>
+<li>Sed vel lorem et justo laoreet bibendum. Donec dictum.</li>
+<li>Etiam massa libero, lacinia at, commodo in, tincidunt a, purus.</li>
+<li>Praesent volutpat eros quis enim blandit tincidunt.</li>
+<li>Aenean eu libero nec lectus ultricies laoreet. Donec rutrum, nisi vel egestas ultrices, ipsum urna sagittis libero, vitae vestibulum dui dolor vel velit.</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=146</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>An Ordered List Post</title>
+		<link>http://kipacha.co.ke/?p=145</link>
+		<comments>http://kipacha.co.ke/?p=145#comments</comments>
+		<pubDate>Wed, 17 Sep 2008 22:09:41 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://dev.wpcoder.com/dan/wordpress/?p=50</guid>
+		<description><![CDATA[Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. Fusce erat.</p>
+<h3>An Ordered List</h3>
+<ol>
+<li>Vestibulum in mauris semper tortor interdum ultrices.</li>
+<li>Sed vel lorem et justo laoreet bibendum. Donec dictum.</li>
+<li>Etiam massa libero, lacinia at, commodo in, tincidunt a, purus.</li>
+<li>Praesent volutpat eros quis enim blandit tincidunt.</li>
+<li>Aenean eu libero nec lectus ultricies laoreet. Donec rutrum, nisi vel egestas ultrices, ipsum urna sagittis libero, vitae vestibulum dui dolor vel velit.</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=145</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>A Simple Text Post</title>
+		<link>http://kipacha.co.ke/?p=179</link>
+		<comments>http://kipacha.co.ke/?p=179#comments</comments>
+		<pubDate>Wed, 17 Sep 2008 22:08:48 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Child Category III]]></category>
+		<category><![CDATA[Parent Category III]]></category>
+		<category><![CDATA[tag1]]></category>
+		<category><![CDATA[tag3]]></category>
+		<category><![CDATA[tag6]]></category>
+
+		<guid isPermaLink="false">http://dev.wpcoder.com/dan/wordpress/?p=45</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed eleifend urna eu sapien. Quisque posuere nunc eu massa. Praesent bibendum lorem non leo. Morbi volutpat, urna eu fermentum rutrum, ligula lacus interdum mauris, ac pulvinar libero pede a enim. Etiam commodo malesuada ante. Donec nec ligula. Curabitur mollis semper diam. Duis viverra nibh a felis [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed eleifend urna eu sapien. Quisque posuere nunc eu massa. Praesent bibendum lorem non leo. Morbi volutpat, urna eu fermentum rutrum, ligula lacus interdum mauris, ac pulvinar libero pede a enim. Etiam commodo malesuada ante. Donec nec ligula. Curabitur mollis semper diam. <span id="more-179"></span></p>
+<p>Duis viverra nibh a felis condimentum pretium. Nullam tristique lacus non purus. Donec vel felis. Etiam et sapien. Pellentesque nec quam a justo tincidunt laoreet. Aenean id enim. Donec lorem arcu, eleifend venenatis, rhoncus mollis, semper at, dui. Praesent velit tellus, adipiscing et, blandit convallis, dictum at, dui. Integer suscipit tortor in orci. Phasellus consequat. Quisque dictum convallis pede.</p>
+<p>Mauris viverra scelerisque mauris. Nulla facilisis, elit malesuada pretium egestas, dolor arcu commodo est, at egestas massa tortor ut ante. Etiam eget libero. Aenean pretium, tellus sed sodales semper, turpis purus aliquet orci, pulvinar ornare odio tortor sit amet dui.</p>
+<p>Aenean id orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus magna. Mauris tincidunt iaculis enim. Duis a mi vitae sapien dapibus tincidunt. Proin metus.</p>
+<p>Proin cursus, libero non auctor faucibus, urna mi vestibulum orci, sit amet fermentum nibh purus eget enim. Aenean aliquet ligula nec nulla. Praesent sit amet lorem vitae massa hendrerit auctor. Sed sit amet urna. Aenean sapien nunc, imperdiet a, pharetra in, consequat eu, neque. Phasellus vel sem gravida augue consequat tempor. Curabitur eget mauris at pede varius facilisis.</p>
+<p>Morbi ut sapien. Morbi arcu mauris, suscipit congue, placerat sit amet, suscipit a, ante. Donec aliquet dui ac nunc. Mauris magna quam, aliquet quis, viverra eu, fringilla eget, purus. Donec tristique pretium sem.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=179</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Hello world!</title>
+		<link>http://kipacha.co.ke/?p=176</link>
+		<comments>http://kipacha.co.ke/?p=176#comments</comments>
+		<pubDate>Wed, 17 Sep 2008 21:53:25 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://dev.wpcoder.com/dan/wordpress/?p=1</guid>
+		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!]]></description>
+				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=176</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>A Post With Everything In It</title>
+		<link>http://kipacha.co.ke/?p=174</link>
+		<comments>http://kipacha.co.ke/?p=174#comments</comments>
+		<pubDate>Fri, 12 Sep 2008 03:25:45 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Child Category II]]></category>
+		<category><![CDATA[Grandchild Category I]]></category>
+		<category><![CDATA[Parent Category I]]></category>
+		<category><![CDATA[Parent Category II]]></category>
+		<category><![CDATA[tag1]]></category>
+		<category><![CDATA[tag2]]></category>
+		<category><![CDATA[tag5]]></category>
+		<category><![CDATA[tag7]]></category>
+
+		<guid isPermaLink="false">http://dev.danphilibin.com/wordpress/?p=63</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, convallis quis, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat. Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img class="alignright" src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" align="right" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, <a href="#">convallis quis</a>, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat. <span id="more-174"></span></p>
+<blockquote><p>Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros at neque pretium sagittis. Sed sodales lorem a ipsum suscipit gravida. Ut fringilla placerat arcu. Phasellus imperdiet. Mauris ac justo et turpis pharetra vulputate.</p></blockquote>
+<p><cite><a href="#">Quote Source</a></cite></p>
+<h1>Level 1 Heading</h1>
+<h2>Level 2 Heading</h2>
+<h3>Level 3 Heading</h3>
+<h4>Level 4 Heading</h4>
+<h5>Level 5 Heading</h5>
+<h6>Level 6 Heading</h6>
+<h3>An Unordered List</h3>
+<ul>
+<li>Vestibulum in mauris semper tortor interdum ultrices.</li>
+<li>Sed vel lorem et justo laoreet bibendum. Donec dictum.</li>
+<li>Etiam massa libero, lacinia at, commodo in, tincidunt a, purus.</li>
+<li>Praesent volutpat eros quis enim blandit tincidunt.</li>
+<li>Aenean eu libero nec lectus ultricies laoreet. Donec rutrum, nisi vel egestas ultrices, ipsum urna sagittis libero, vitae vestibulum dui dolor vel velit.</li>
+</ul>
+<h3>Image with no alignment</h3>
+<p><img src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" /></p>
+<p><img class="alignleft" src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" align="left" />Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. Fusce erat.</p>
+<h3>An Ordered List</h3>
+<ol>
+<li>Vestibulum in mauris semper tortor interdum ultrices.</li>
+<li>Sed vel lorem et justo laoreet bibendum. Donec dictum.</li>
+<li>Etiam massa libero, lacinia at, commodo in, tincidunt a, purus.</li>
+<li>Praesent volutpat eros quis enim blandit tincidunt.</li>
+<li>Aenean eu libero nec lectus ultricies laoreet. Donec rutrum, nisi vel egestas ultrices, ipsum urna sagittis libero, vitae vestibulum dui dolor vel velit.</li>
+</ol>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=174</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Quotes Time!</title>
+		<link>http://kipacha.co.ke/?p=173</link>
+		<comments>http://kipacha.co.ke/?p=173#comments</comments>
+		<pubDate>Fri, 12 Sep 2008 03:24:01 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[tag2]]></category>
+		<category><![CDATA[tag5]]></category>
+		<category><![CDATA[tag7]]></category>
+
+		<guid isPermaLink="false">http://dev.danphilibin.com/wordpress/?p=61</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, convallis quis, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat. Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a, <a href="#">convallis quis</a>, pellentesque a, dolor. Curabitur vitae nisi non dolor vestibulum consequat.</p>
+<blockquote><p>Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros at neque pretium sagittis. Sed sodales lorem a ipsum suscipit gravida. Ut fringilla placerat arcu. Phasellus imperdiet. Mauris ac justo et turpis pharetra vulputate.</p></blockquote>
+<p><cite><a href="#">Quote Source</a></cite></p>
+<blockquote><p>Proin vestibulum. Ut ligula. Nullam sed dolor id odio volutpat pulvinar. Integer a leo. In et eros at neque pretium sagittis. Sed sodales lorem a ipsum suscipit gravida. Ut fringilla placerat arcu. Phasellus imperdiet. Mauris ac justo et turpis pharetra vulputate.</p></blockquote>
+<p><cite><a href="#">Quote Source</a></cite></p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=173</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>A Post With a Left-Aligned Image</title>
+		<link>http://kipacha.co.ke/?p=171</link>
+		<comments>http://kipacha.co.ke/?p=171#comments</comments>
+		<pubDate>Fri, 12 Sep 2008 03:23:11 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Parent Category II]]></category>
+		<category><![CDATA[Parent Category III]]></category>
+		<category><![CDATA[tag2]]></category>
+		<category><![CDATA[tag4]]></category>
+		<category><![CDATA[tag7]]></category>
+
+		<guid isPermaLink="false">http://dev.danphilibin.com/wordpress/?p=59</guid>
+		<description><![CDATA[Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://i35.tinypic.com/990wtx.png" alt="WordPress Logo" align="left" class="alignleft" />Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo. Fusce in est. Sed nec diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nibh eget nibh. Sed tempor. Fusce erat.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=171</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Another Text-Only Post</title>
+		<link>http://kipacha.co.ke/?p=144</link>
+		<comments>http://kipacha.co.ke/?p=144#comments</comments>
+		<pubDate>Fri, 12 Sep 2008 03:20:39 +0000</pubDate>
+		<dc:creator><![CDATA[eh.rajib@gmail.com]]></dc:creator>
+				<category><![CDATA[Child Category II]]></category>
+		<category><![CDATA[Grandchild Category I]]></category>
+		<category><![CDATA[Parent Category I]]></category>
+
+		<guid isPermaLink="false">http://dev.danphilibin.com/wordpress/?p=57</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed eleifend urna eu sapien. Quisque posuere nunc eu massa. Praesent bibendum lorem non leo. Morbi volutpat, urna eu fermentum rutrum, ligula lacus interdum mauris, ac pulvinar libero pede a enim. Etiam commodo malesuada ante. Donec nec ligula. Curabitur mollis semper diam. Duis viverra nibh a felis [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed eleifend urna eu sapien. Quisque posuere nunc eu massa. Praesent bibendum lorem non leo. Morbi volutpat, urna eu fermentum rutrum, ligula lacus interdum mauris, ac pulvinar libero pede a enim. Etiam commodo malesuada ante. Donec nec ligula. Curabitur mollis semper diam. <span id="more-144"></span></p>
+<p>Duis viverra nibh a felis condimentum pretium. Nullam tristique lacus non purus. Donec vel felis. Etiam et sapien. Pellentesque nec quam a justo tincidunt laoreet. Aenean id enim. Donec lorem arcu, eleifend venenatis, rhoncus mollis, semper at, dui. Praesent velit tellus, adipiscing et, blandit convallis, dictum at, dui. Integer suscipit tortor in orci. Phasellus consequat. Quisque dictum convallis pede.</p>
+<p>Mauris viverra scelerisque mauris. Nulla facilisis, elit malesuada pretium egestas, dolor arcu commodo est, at egestas massa tortor ut ante. Etiam eget libero. Aenean pretium, tellus sed sodales semper, turpis purus aliquet orci, pulvinar ornare odio tortor sit amet dui.</p>
+<p>Aenean id orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus magna. Mauris tincidunt iaculis enim. Duis a mi vitae sapien dapibus tincidunt. Proin metus.</p>
+<p>Proin cursus, libero non auctor faucibus, urna mi vestibulum orci, sit amet fermentum nibh purus eget enim. Aenean aliquet ligula nec nulla. Praesent sit amet lorem vitae massa hendrerit auctor. Sed sit amet urna. Aenean sapien nunc, imperdiet a, pharetra in, consequat eu, neque. Phasellus vel sem gravida augue consequat tempor. Curabitur eget mauris at pede varius facilisis.</p>
+<p>Morbi ut sapien. Morbi arcu mauris, suscipit congue, placerat sit amet, suscipit a, ante. Donec aliquet dui ac nunc. Mauris magna quam, aliquet quis, viverra eu, fringilla eget, purus. Donec tristique pretium sem.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://kipacha.co.ke/?feed=rss2&#038;p=144</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>
